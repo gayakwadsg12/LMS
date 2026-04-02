@@ -5,23 +5,26 @@ import {
   BookOpen,
   Users,
   GraduationCap,
-  Wallet,
   Video,
   BarChart3,
   Layers,
+  Trophy,
+  User,
 } from 'lucide-react'
 
 const nav = [
-  { to: '/admin', label: 'Dashboard', end: true, icon: LayoutDashboard },
-  { to: '/admin/course-management', label: 'Course Management', icon: BookOpen },
-  { to: '/admin/instructor-management', label: 'Instructor Management', icon: Users },
-  { to: '/admin/student-management', label: 'Student Management', icon: GraduationCap },
-  { to: '/admin/payments-coupons', label: 'Payments & Coupons', icon: Wallet },
-  { to: '/admin/live-classes', label: 'Live Classes', icon: Video },
-  { to: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
+  { to: '/student-panel', label: 'Dashboard', end: true, icon: LayoutDashboard },
+  { to: '/student-panel/continue-learning', label: 'Continue Learning', icon: Video },
+  { to: '/student-panel/my-courses', label: 'My Courses', icon: BookOpen },
+  // { to: '/student-panel/progress-overview', label: 'Progress Overview', icon: BookOpen },
+  { to: '/student-panel/browse-courses', label: 'Browse Courses', icon: BarChart3 },
+  { to: '/student-panel/e-library', label: 'E-Library', icon: GraduationCap },
+  { to: '/student-panel/live-classes', label: 'Live Classes', icon: Users },
+  { to: '/student-panel/certificates', label: 'Certificates', icon: Trophy },
+  { to: '/student-panel/profile', label: 'Profile', icon: User },
 ]
 
-export default function AdminLayout() {
+export default function StudentLayout() {
   return (
     <div className="flex h-screen min-w-[1280px] bg-[#f6f8fa] text-[#0f172a]">
       <aside className="flex w-[240px] shrink-0 flex-col border-r border-black/[0.08] bg-white">
@@ -31,7 +34,7 @@ export default function AdminLayout() {
           </div>
           <div>
             <div className="text-xl font-bold leading-[22px]">LMS</div>
-            <div className="text-[13px] text-[#94a3b8]">Institute Admin</div>
+            <div className="text-[13px] text-[#94a3b8]">Student Panel</div>
           </div>
         </div>
 
@@ -58,14 +61,14 @@ export default function AdminLayout() {
 
         <div className="px-[18px] pb-4 pt-4">
           <div className="rounded-lg border border-black/[0.08] bg-[#e8f5ff] p-[17px]">
-            <div className="text-sm font-semibold text-[#0f172a]">Institute growth</div>
+            <div className="text-sm font-semibold text-[#0f172a]">Learning streak</div>
             <p className="mt-1 text-[13px] leading-snug text-[#94a3b8]">
-              Enrollment target progress for this month
+              Keep consistency and finish your weekly goals
             </p>
             <div className="mt-2 h-2.5 w-full overflow-hidden rounded-xl bg-[#f0f4f8]">
               <div className="h-full w-[76%] rounded-xl bg-[#5b3df6]" />
             </div>
-            <p className="mt-2 text-[13px] text-[#94a3b8]">76% of monthly goal achieved</p>
+            <p className="mt-2 text-[13px] text-[#94a3b8]">12 days active in a row</p>
           </div>
         </div>
       </aside>

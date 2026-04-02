@@ -17,7 +17,7 @@ import SuperAdminUsers from './pages/super admin/SuperAdminUsers'
 import SuperAdminReports from './pages/super admin/SuperAdminReports'
 import SuperAdminPlansBilling from './pages/super admin/SuperAdminPlansBilling'
 import SuperAdminSettings from './pages/super admin/SuperAdminSettings'
-import AdminLayout from './components/admin/adminlayout'
+import AdminLayout from './components/admin/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminCourseManagement from './pages/admin/AdminCourseManagement'
 import AdminInstructorManagement from './pages/admin/AdminInstructorManagement'
@@ -25,6 +25,8 @@ import AdminStudentManagement from './pages/admin/AdminStudentManagement'
 import AdminPaymentsCupons from './pages/admin/AdminPayments&Cupons'
 import AdminLiveClasses from './pages/admin/AdminLiveClasses'
 import AdminAnalytics from './pages/admin/AdminAnalytics'
+import AdminProfile from './pages/admin/AdminProfile'
+import AdminNotification from './pages/admin/AdminNotification'
 import InstructorLayout from './components/Instructor/InstructorLayout'
 import InstructorDashboard from './pages/instructor/InstructorDashboard'
 import InstructorMycourses from './pages/instructor/InstructorMycourses'
@@ -32,6 +34,17 @@ import InstructorOnlineClasses from './pages/instructor/InstructorOnlineClasses'
 import InstructorWeeklyTest from './pages/instructor/InstructorWeeklyTest'
 import InstructorSchoolEvents from './pages/instructor/InstructorSchoolEvents'
 import InstructorStudentInsights from './pages/instructor/InstructorStudentInsights'
+import InstructorProfile from './pages/instructor/InstructorProfile'
+import StudentLayout from './components/student/StudentLayout'
+import StudentDashboard from './pages/student panel/StudentDashboard'
+import StudentContinueLearning from './pages/student panel/StudentContinueLearning'
+import StudentMyCourses from './pages/student panel/StudentMyCourses'
+import StudentProgressOverview from './pages/student panel/StudentProgressOverview'
+import StudentBrowseCourses from './pages/student panel/StudentBrowseCourse'
+import StudentELibrary from './pages/student panel/StudentELibrary'
+import StudentLiveClasses from './pages/student panel/StudentLiveClasses'
+import StudentCertificates from './pages/student panel/StudentCertificates'
+import StudentProfile from './pages/student panel/StudentProfile'
 
 function App() {
   return (
@@ -67,6 +80,8 @@ function App() {
           <Route path="payments-coupons" element={<AdminPaymentsCupons />} />
           <Route path="live-classes" element={<AdminLiveClasses />} />
           <Route path="analytics" element={<AdminAnalytics />} />
+          <Route path="notification" element={<AdminNotification />} />
+          <Route path="profile" element={<AdminProfile />} />
         </Route>
         <Route path="/instructor" element={<InstructorLayout />}>
           <Route index element={<InstructorDashboard />} />
@@ -76,6 +91,19 @@ function App() {
           <Route path="weekly-tests" element={<InstructorWeeklyTest />} />
           <Route path="school-events" element={<InstructorSchoolEvents />} />
           <Route path="student-insights" element={<InstructorStudentInsights />} />
+          <Route path="profile" element={<InstructorProfile />} />
+        </Route>
+        <Route path="/student-panel" element={<StudentLayout />}>
+          <Route index element={<StudentDashboard />} />
+          <Route path="dashboard" element={<StudentDashboard />} />
+          <Route path="continue-learning" element={<StudentContinueLearning />} />
+          <Route path="my-courses" element={<StudentMyCourses />} />
+          <Route path="progress-overview" element={<StudentProgressOverview />} />
+          <Route path="browse-courses" element={<StudentBrowseCourses />} />
+          <Route path="e-library" element={<StudentELibrary />} />
+          <Route path="live-classes" element={<StudentLiveClasses />} />
+          <Route path="certificates" element={<StudentCertificates />} />
+          <Route path="profile" element={<StudentProfile />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

@@ -1,36 +1,6 @@
 import React from 'react'
 import { Search, Upload, Filter, CalendarDays } from 'lucide-react'
 
-const AVATAR_RAHUL = 'https://www.figma.com/api/mcp/asset/5b24609b-97ad-4bea-af20-b4f4df404b75'
-
-function Header() {
-  return (
-    <header className="flex h-[76px] items-center justify-between border-b border-black/[0.08] bg-white px-7">
-      <div>
-        <p className="text-[13px] font-medium text-[#94a3b8]">Client admin panel</p>
-        <h1 className="text-2xl font-bold leading-tight text-[#0f172a]">Analytics</h1>
-      </div>
-      <div className="flex items-center gap-3">
-        <div className="flex h-10 min-w-[280px] items-center gap-2.5 rounded-md border border-black/[0.08] bg-white px-[15px]">
-          <Search className="h-[18px] w-[18px] text-[#94a3b8]" />
-          <input className="min-w-0 flex-1 bg-transparent text-sm placeholder:text-[#94a3b8] focus:outline-none" placeholder="Search students, courses, or classes" />
-        </div>
-        <button className="inline-flex h-10 items-center gap-2 rounded-md border border-black/[0.08] bg-[#e8f5ff] px-[17px] text-sm font-medium text-[#0f172a]">
-          <Upload className="h-[18px] w-[18px]" />
-          Bulk Upload
-        </button>
-        <div className="flex items-center gap-3 rounded-md border border-black/[0.08] bg-white px-2.5 py-2">
-          <img src={AVATAR_RAHUL} alt="" className="h-9 w-9 rounded-md object-cover" />
-          <div>
-            <div className="text-sm font-semibold leading-tight">Rahul Mehta</div>
-            <div className="text-[13px] text-[#94a3b8]">Institute Owner</div>
-          </div>
-        </div>
-      </div>
-    </header>
-  )
-}
-
 function Stat({ label, value, chip, chipCls }) {
   return (
     <div className="rounded-[8px] border border-black/[0.08] bg-white p-[16px]">
@@ -45,7 +15,6 @@ export default function AdminAnalytics() {
   const bars = [50, 61, 71, 75, 74, 73, 72]
   return (
     <div className="min-h-full bg-[#f6f8fa]">
-      <Header />
       <div className="space-y-4 p-5">
         <section className="grid grid-cols-[1.7fr_1fr] gap-3 rounded-[8px] border border-black/[0.08] bg-[#eaf2fb] p-4">
           <div>
@@ -154,7 +123,12 @@ export default function AdminAnalytics() {
             <div className="overflow-hidden rounded-[8px] border border-black/[0.08]">
               <table className="w-full text-left text-[11px]">
                 <thead className="bg-[#f8fafc] text-[#94a3b8]">
-                  <tr><th className="px-3 py-2">Course</th><th className="px-3 py-2">Learners</th><th className="px-3 py-2">Completion</th><th className="px-3 py-2">Revenue</th></tr>
+                  <tr>
+                    <th className="px-3 py-2">Course</th>
+                    <th className="px-3 py-2">Learners</th>
+                    <th className="px-3 py-2">Completion</th>
+                    <th className="px-3 py-2">Revenue</th>
+                  </tr>
                 </thead>
                 <tbody>
                   {[
@@ -196,4 +170,3 @@ export default function AdminAnalytics() {
     </div>
   )
 }
-

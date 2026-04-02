@@ -67,53 +67,6 @@ function StepPill({ label, variant }) {
   )
 }
 
-function Header() {
-  return (
-    <header className="flex h-[76px] items-center justify-between border-b border-black/[0.08] bg-white px-[28px]">
-      <div className="relative shrink-0 w-[228.47px]">
-        <div className="flex flex-col font-medium h-[16px] justify-center leading-[0] text-[#94a3b8] text-[13px]">
-          Client admin panel
-        </div>
-        <div className="flex flex-col font-bold h-[29px] justify-center leading-[0] text-[#0f172a] text-[24px]">
-          Institute dashboard
-        </div>
-      </div>
-
-      <div className="flex items-center gap-[12px]">
-        <div className="bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] min-w-[280px] px-[15px] py-[0.25px] relative rounded-[6px]">
-          <div className="relative shrink-0 size-[18px] flex items-center justify-center">
-            <div className="absolute inset-[0] flex items-center justify-center">
-              <Search className="h-[18px] w-[18px] text-[#94a3b8]" />
-            </div>
-          </div>
-          <div className="flex flex-col font-normal h-[17px] justify-center leading-[0] text-[#94a3b8] text-[14px]">
-            Search students, courses, or classes
-          </div>
-        </div>
-
-        <div className="bg-[#e8f5ff] border border-black/[0.08] flex items-center gap-[8px] h-[40px] justify-center px-[17px] py-[0.25px] rounded-[6px] shrink-0">
-          <Upload className="h-[18px] w-[18px] text-[#0f172a]" />
-          <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">
-            Bulk Upload
-          </div>
-        </div>
-
-        <div className="bg-white border border-black/[0.08] flex items-center gap-[12px] px-[11px] py-[9px] rounded-[6px]">
-          <Avatar src={AVATAR_RAHUL} alt="Rahul Mehta" />
-          <div className="flex flex-col gap-[0.01px] items-start w-[93.48px]">
-            <div className="flex flex-col font-semibold h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">
-              Rahul Mehta
-            </div>
-            <div className="flex flex-col font-normal h-[15px] justify-center leading-[0] text-[#94a3b8] text-[13px]">
-              Institute Owner
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  )
-}
-
 export default function AdminDashboard() {
   const courses = [
     {
@@ -198,8 +151,8 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-full bg-[#F7FAFD]">
-      <Header />
-
+      {/* Removed Header component */}
+      
       <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
         {/* Hero */}
         <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
@@ -234,6 +187,9 @@ export default function AdminDashboard() {
           </div>
         </section>
 
+        {/* Rest of your dashboard content remains the same */}
+        {/* ... all the other sections (stats, courses, etc.) ... */}
+        
         {/* Stats row */}
         <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(4,minmax(0,1fr))]">
           <div className="bg-white border border-black/[0.08] border-solid col-1 flex flex-col gap-[16px] items-start p-[19px] rounded-[8px]">
@@ -321,6 +277,7 @@ export default function AdminDashboard() {
           </div>
         </div>
 
+        {/* Keep all other sections exactly as they were */}
         {/* Top 2 cards: Course management + Live classes */}
         <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[minmax(0,1.80fr)_minmax(0,1.20fr)]">
           <div className="bg-white border border-black/[0.08] border-solid content-stretch flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
@@ -660,4 +617,3 @@ export default function AdminDashboard() {
     </div>
   )
 }
-

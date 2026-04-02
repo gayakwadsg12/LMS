@@ -10,6 +10,7 @@ import {
   BarChart3,
   Layers,
 } from 'lucide-react'
+import HeaderPanel from '../../components/HeaderPanel'
 
 const nav = [
   { to: '/admin', label: 'Dashboard', end: true, icon: LayoutDashboard },
@@ -19,6 +20,7 @@ const nav = [
   { to: '/admin/payments-coupons', label: 'Payments & Coupons', icon: Wallet },
   { to: '/admin/live-classes', label: 'Live Classes', icon: Video },
   { to: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
+  { to: '/admin/profile', label: 'Profile', icon: Users },
 ]
 
 export default function AdminLayout() {
@@ -70,8 +72,11 @@ export default function AdminLayout() {
         </div>
       </aside>
 
-      <main className="flex-1 overflow-y-auto">
-        <Outlet />
+      <main className="flex-1 flex flex-col overflow-y-auto">
+        <HeaderPanel />
+        <div className="flex-1 overflow-y-auto">
+          <Outlet />
+        </div>
       </main>
     </div>
   )
