@@ -9,6 +9,7 @@ import {
   User,
   Layers,
 } from 'lucide-react'
+import HeaderPanel from '../../components/HeaderPanel'
 
 const nav = [
   { to: '/instructor', label: 'Dashboard', end: true, icon: LayoutDashboard },
@@ -17,6 +18,7 @@ const nav = [
   { to: '/instructor/weekly-tests', label: 'Weekly Tests', icon: FileText },
   { to: '/instructor/school-events', label: 'School Events', icon: Calendar },
   { to: '/instructor/student-insights', label: 'Student Insights', icon: User },
+  { to: '/instructor/profile', label: 'Profile', icon: User },
 ]
 
 export default function InstructorLayout() {
@@ -41,10 +43,9 @@ export default function InstructorLayout() {
               to={item.to}
               end={item.end}
               className={({ isActive }) =>
-                `flex items-center gap-[2px] rounded-md px-3 py-2.5 text-[13.5px] font-medium transition-colors ${
-                  isActive
-                    ? 'bg-[#ede7ff] text-[#5b3df6]'
-                    : 'text-[#0f172a] hover:bg-slate-100'
+                `flex items-center gap-[2px] rounded-md px-3 py-2.5 text-[13.5px] font-medium transition-colors ${isActive
+                  ? 'bg-[#ede7ff] text-[#5b3df6]'
+                  : 'text-[#0f172a] hover:bg-slate-100'
                 }`
               }
             >
@@ -68,8 +69,14 @@ export default function InstructorLayout() {
         </div>
       </aside>
 
-      <main className="flex-1 overflow-y-auto">
+      {/* <main className="flex-1 overflow-y-auto">
         <Outlet />
+      </main> */}
+      <main className="flex-1 flex flex-col overflow-y-auto">
+        <HeaderPanel />
+        <div className="flex-1 overflow-y-auto">
+          <Outlet />
+        </div>
       </main>
     </div>
   )

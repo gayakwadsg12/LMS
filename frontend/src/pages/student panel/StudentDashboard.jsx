@@ -1,0 +1,407 @@
+// import React from 'react'
+// import { Search, Bell, PlayCircle, BookOpen, Video, Trophy, Users, BookOpen as BookIcon, GraduationCap, Wallet, BarChart3, Upload, Plus } from 'lucide-react'
+
+// const AVATAR = 'https://www.figma.com/api/mcp/asset/5b24609b-97ad-4bea-af20-b4f4df404b75'
+
+// function TopBar() {
+//   return (
+//     <header className="flex h-[76px] items-center justify-between border-b border-black/[0.08] bg-white px-[28px]">
+//       <div className="relative shrink-0">
+//         <div className="flex flex-col font-medium h-[16px] justify-center leading-[0] text-[#94a3b8] text-[13px]">
+//           Student panel
+//         </div>
+//         <div className="flex flex-col font-bold h-[29px] justify-center leading-[0] text-[#0f172a] text-[24px]">
+//           Learner experience
+//         </div>
+//       </div>
+//       <div className="flex items-center gap-[12px]">
+//         <div className="bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] min-w-[280px] px-[15px] py-[0.25px] relative rounded-[6px]">
+//           <Search className="h-[18px] w-[18px] text-[#94a3b8]" />
+//           <input
+//             className="min-w-0 flex-1 bg-transparent text-[14px] text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none"
+//             placeholder="Search modules, tests..."
+//           />
+//         </div>
+//         <button className="bg-white border border-black/[0.08] flex items-center gap-[8px] h-[40px] justify-center px-[17px] py-[0.25px] rounded-[6px] shrink-0">
+//           <Bell className="h-[18px] w-[18px] text-[#0f172a]" />
+//           <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">
+//             Notifications
+//           </div>
+//         </button>
+//         <div className="bg-white border border-black/[0.08] flex items-center gap-[12px] px-[11px] py-[9px] rounded-[6px]">
+//           <img src={AVATAR} alt="" className="h-[36px] w-[36px] rounded-[6px] object-cover" />
+//           <div className="flex flex-col gap-[0.01px] items-start">
+//             <div className="flex flex-col font-semibold h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">
+//               Aarohi Shah
+//             </div>
+//             <div className="flex flex-col font-normal h-[15px] justify-center leading-[0] text-[#94a3b8] text-[13px]">
+//               Learner
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </header>
+//   )
+// }
+
+// function Pill({ children, variant }) {
+//   const style =
+//     variant === 'success'
+//       ? 'bg-[#2dd4bf] text-[#023b33]'
+//       : variant === 'warning'
+//         ? 'bg-[#ffd966] text-[#4b2e00]'
+//         : variant === 'primary'
+//           ? 'bg-[#5b3df6] text-white'
+//           : 'bg-[#e8f5ff] text-[#0f172a]'
+
+//   return <span className={`inline-flex h-[28px] items-center px-[10px] rounded-[12px] text-[12px] font-medium ${style}`}>{children}</span>
+// }
+
+// export default function StudentDashboard() {
+//   const stats = [
+//     ['Courses in progress', '7', '3 due soon'],
+//     ['Live classes this week', '4', '2 reminders now'],
+//     ['Quiz attempts', '18', '5 pending review'],
+//     ['Certificates earned', '5', '2 new this month'],
+//     ['Learning streak', '12', 'days active'],
+//   ]
+
+//   return (
+//     <div className="min-h-full bg-[#F7FAFD]">
+//       <TopBar />
+//       <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+        
+//         {/* Hero Section */}
+//         <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
+//           <div className="flex flex-col gap-[11px] items-start relative shrink-0">
+//             <div className="bg-[#ffd966] flex items-center px-[10px] py-[6.5px] rounded-[12px] shrink-0">
+//               <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#4b2e00] text-[12px]">
+//                 Student journey • Updated
+//               </div>
+//             </div>
+//             <div className="max-w-[850px] text-[35px] font-bold leading-[1.2] text-[#0f172a]">
+//               Continue courses, access the new e-library, join live classes, and complete quizzes from one place.
+//             </div>
+//             <div className="max-w-[750px] text-[13.9px] text-[#94a3b8]">
+//               A learner dashboard for course discovery, class schedule, progress tracking, saved courses, e-library resources, live class reminders, and next-step digital study pathways with time-based goals.
+//             </div>
+//           </div>
+//           <div className="mt-4 flex items-center gap-[12px]">
+//             <button className="bg-[#5b3df6] flex items-center gap-[8px] h-[40px] justify-center px-[16px] rounded-[6px] shrink-0">
+//               <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-white text-[14px]">Continue Learning</div>
+//             </button>
+//             <button className="border border-black/[0.08] flex items-center gap-[8px] h-[40px] justify-center px-[17px] py-[0.25px] rounded-[6px] shrink-0 bg-white">
+//               <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">Open E-Library</div>
+//             </button>
+//           </div>
+//         </section>
+
+//         {/* Stats Row */}
+//         <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(5,minmax(0,1fr))]">
+//           {stats.map(([title, value, meta]) => (
+//             <div key={title} className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[12px] items-start p-[16px] rounded-[8px]">
+//               <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#94a3b8] text-[13px]">
+//                 {title}
+//               </div>
+//               <div className="flex flex-col font-bold h-[36px] justify-center leading-[0] text-[#0f172a] text-[32px] tracking-[-0.6px]">
+//                 {value}
+//               </div>
+//               <div className="bg-[#2dd4bf] h-[28px] rounded-[12px] relative flex items-center px-[10px]">
+//                 <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#023b33] text-[11px]">
+//                   {meta}
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Content Grid */}
+//         <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[1.45fr_1fr]">
+//           {/* Left Column */}
+//           <div className="flex flex-col gap-[24px]">
+//             {/* Course browsing */}
+//             <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
+//               <div className="flex items-center justify-between w-full">
+//                 <div>
+//                   <h3 className="font-bold text-[18px] text-[#0f172a]">Course browsing</h3>
+//                   <p className="text-[13px] text-[#94a3b8] mt-[4px]">Discover and resume your learning journey</p>
+//                 </div>
+//                 <button className="border border-black/[0.08] flex items-center gap-[8px] h-[36px] justify-center px-[14px] rounded-[6px] bg-white">
+//                   <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#5b3df6] text-[12px]">Explore</div>
+//                 </button>
+//               </div>
+//               <div className="flex flex-col w-full gap-[12px]">
+//                 {['Search courses', 'Filter by topic', 'Resume where I left', 'Enroll new pathway'].map((item) => (
+//                   <div key={item} className="flex items-center justify-between p-[14px] border border-black/[0.08] rounded-[6px]">
+//                     <p className="font-semibold text-[14px] text-[#0f172a]">{item}</p>
+//                     <PlayCircle className="h-[18px] w-[18px] text-[#5b3df6]" />
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+
+//             {/* E-Library */}
+//             <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
+//               <div className="flex items-center justify-between w-full">
+//                 <div>
+//                   <h3 className="font-bold text-[18px] text-[#0f172a]">E-Library</h3>
+//                   <p className="text-[13px] text-[#94a3b8] mt-[4px]">Access digital resources and learning materials</p>
+//                 </div>
+//                 <button className="border border-black/[0.08] flex items-center gap-[8px] h-[36px] justify-center px-[14px] rounded-[6px] bg-white">
+//                   <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#5b3df6] text-[12px]">Browse library</div>
+//                 </button>
+//               </div>
+//               <div className="flex flex-col w-full gap-[12px]">
+//                 {['Easy search and filters', 'Online read-only mode', 'Filter by language', 'Prime membership benefits'].map((item) => (
+//                   <div key={item} className="flex items-center justify-between p-[14px] border border-black/[0.08] rounded-[6px]">
+//                     <p className="font-semibold text-[14px] text-[#0f172a]">{item}</p>
+//                     <BookIcon className="h-[18px] w-[18px] text-[#5b3df6]" />
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Right Column */}
+//           <div className="flex flex-col gap-[24px]">
+//             {/* Course purchase */}
+//             <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px]">
+//               <div>
+//                 <h3 className="font-bold text-[18px] text-[#0f172a]">Course purchase</h3>
+//                 <p className="text-[13px] text-[#94a3b8] mt-[4px]">Complete your enrollment process</p>
+//               </div>
+//               <div className="flex flex-col w-full gap-[12px]">
+//                 {['Email now', 'Payment gateway', 'Course purchase confirmation'].map((item) => (
+//                   <div key={item} className="p-[14px] border border-black/[0.08] rounded-[6px]">
+//                     <p className="font-semibold text-[14px] text-[#0f172a] mb-[4px]">{item}</p>
+//                     <p className="text-[11px] text-[#94a3b8]">Action required</p>
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+
+//             {/* Live classes */}
+//             <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px]">
+//               <div>
+//                 <h3 className="font-bold text-[18px] text-[#0f172a]">Live classes</h3>
+//                 <p className="text-[13px] text-[#94a3b8] mt-[4px]">Join your scheduled sessions</p>
+//               </div>
+//               <div className="flex flex-col w-full gap-[12px]">
+//                 {['Upcoming class', 'Join live session', 'Live class reminder'].map((item) => (
+//                   <div key={item} className="flex items-center justify-between p-[14px] border border-black/[0.08] rounded-[6px]">
+//                     <p className="font-semibold text-[14px] text-[#0f172a]">{item}</p>
+//                     <Video className="h-[18px] w-[18px] text-[#5b3df6]" />
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+
+//             {/* Quiz section */}
+//             <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px]">
+//               <div>
+//                 <h3 className="font-bold text-[18px] text-[#0f172a]">Quiz section</h3>
+//                 <p className="text-[13px] text-[#94a3b8] mt-[4px]">Test your knowledge and earn certificates</p>
+//               </div>
+//               <div className="flex flex-col w-full gap-[12px]">
+//                 {['Attempt quiz', 'View score', 'Download certificate'].map((item) => (
+//                   <div key={item} className="flex items-center justify-between p-[14px] border border-black/[0.08] rounded-[6px]">
+//                     <p className="font-semibold text-[14px] text-[#0f172a]">{item}</p>
+//                     <Trophy className="h-[18px] w-[18px] text-[#5b3df6]" />
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react'
+import { PlayCircle, BookOpen, Video, Trophy, Users, BookOpen as BookIcon, GraduationCap, Wallet, BarChart3, Upload, Plus } from 'lucide-react'
+
+function Pill({ children, variant }) {
+  const style =
+    variant === 'success'
+      ? 'bg-[#2dd4bf] text-[#023b33]'
+      : variant === 'warning'
+        ? 'bg-[#ffd966] text-[#4b2e00]'
+        : variant === 'primary'
+          ? 'bg-[#5b3df6] text-white'
+          : 'bg-[#e8f5ff] text-[#0f172a]'
+
+  return <span className={`inline-flex h-[28px] items-center px-[10px] rounded-[12px] text-[12px] font-medium ${style}`}>{children}</span>
+}
+
+export default function StudentDashboard() {
+  const stats = [
+    ['Courses in progress', '7', '3 due soon'],
+    ['Live classes this week', '4', '2 reminders now'],
+    ['Quiz attempts', '18', '5 pending review'],
+    ['Certificates earned', '5', '2 new this month'],
+    ['Learning streak', '12', 'days active'],
+  ]
+
+  return (
+    <div className="min-h-full bg-[#F7FAFD]">
+      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+        
+        {/* Hero Section */}
+        <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
+          <div className="flex flex-col gap-[11px] items-start relative shrink-0">
+            <div className="bg-[#ffd966] flex items-center px-[10px] py-[6.5px] rounded-[12px] shrink-0">
+              <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#4b2e00] text-[12px]">
+                Student journey • Updated
+              </div>
+            </div>
+            <div className="max-w-[850px] text-[35px] font-bold leading-[1.2] text-[#0f172a]">
+              Continue courses, access the new e-library, join live classes, and complete quizzes from one place.
+            </div>
+            <div className="max-w-[750px] text-[13.9px] text-[#94a3b8]">
+              A learner dashboard for course discovery, class schedule, progress tracking, saved courses, e-library resources, live class reminders, and next-step digital study pathways with time-based goals.
+            </div>
+          </div>
+          <div className="mt-4 flex items-center gap-[12px]">
+            <button className="bg-[#5b3df6] flex items-center gap-[8px] h-[40px] justify-center px-[16px] rounded-[6px] shrink-0">
+              <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-white text-[14px]">Continue Learning</div>
+            </button>
+            <button className="border border-black/[0.08] flex items-center gap-[8px] h-[40px] justify-center px-[17px] py-[0.25px] rounded-[6px] shrink-0 bg-white">
+              <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">Open E-Library</div>
+            </button>
+          </div>
+        </section>
+
+        {/* Stats Row */}
+        <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(5,minmax(0,1fr))]">
+          {stats.map(([title, value, meta]) => (
+            <div key={title} className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[12px] items-start p-[16px] rounded-[8px]">
+              <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#94a3b8] text-[13px]">
+                {title}
+              </div>
+              <div className="flex flex-col font-bold h-[36px] justify-center leading-[0] text-[#0f172a] text-[32px] tracking-[-0.6px]">
+                {value}
+              </div>
+              <div className="bg-[#2dd4bf] h-[28px] rounded-[12px] relative flex items-center px-[10px]">
+                <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#023b33] text-[11px]">
+                  {meta}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Content Grid */}
+        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[1.45fr_1fr]">
+          {/* Left Column */}
+          <div className="flex flex-col gap-[24px]">
+            {/* Course browsing */}
+            <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
+              <div className="flex items-center justify-between w-full">
+                <div>
+                  <h3 className="font-bold text-[18px] text-[#0f172a]">Course browsing</h3>
+                  <p className="text-[13px] text-[#94a3b8] mt-[4px]">Discover and resume your learning journey</p>
+                </div>
+                <button className="border border-black/[0.08] flex items-center gap-[8px] h-[36px] justify-center px-[14px] rounded-[6px] bg-white">
+                  <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#5b3df6] text-[12px]">Explore</div>
+                </button>
+              </div>
+              <div className="flex flex-col w-full gap-[12px]">
+                {['Search courses', 'Filter by topic', 'Resume where I left', 'Enroll new pathway'].map((item) => (
+                  <div key={item} className="flex items-center justify-between p-[14px] border border-black/[0.08] rounded-[6px]">
+                    <p className="font-semibold text-[14px] text-[#0f172a]">{item}</p>
+                    <PlayCircle className="h-[18px] w-[18px] text-[#5b3df6]" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* E-Library */}
+            <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
+              <div className="flex items-center justify-between w-full">
+                <div>
+                  <h3 className="font-bold text-[18px] text-[#0f172a]">E-Library</h3>
+                  <p className="text-[13px] text-[#94a3b8] mt-[4px]">Access digital resources and learning materials</p>
+                </div>
+                <button className="border border-black/[0.08] flex items-center gap-[8px] h-[36px] justify-center px-[14px] rounded-[6px] bg-white">
+                  <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#5b3df6] text-[12px]">Browse library</div>
+                </button>
+              </div>
+              <div className="flex flex-col w-full gap-[12px]">
+                {['Easy search and filters', 'Online read-only mode', 'Filter by language', 'Prime membership benefits'].map((item) => (
+                  <div key={item} className="flex items-center justify-between p-[14px] border border-black/[0.08] rounded-[6px]">
+                    <p className="font-semibold text-[14px] text-[#0f172a]">{item}</p>
+                    <BookIcon className="h-[18px] w-[18px] text-[#5b3df6]" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="flex flex-col gap-[24px]">
+            {/* Course purchase */}
+            <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px]">
+              <div>
+                <h3 className="font-bold text-[18px] text-[#0f172a]">Course purchase</h3>
+                <p className="text-[13px] text-[#94a3b8] mt-[4px]">Complete your enrollment process</p>
+              </div>
+              <div className="flex flex-col w-full gap-[12px]">
+                {['Email now', 'Payment gateway', 'Course purchase confirmation'].map((item) => (
+                  <div key={item} className="p-[14px] border border-black/[0.08] rounded-[6px]">
+                    <p className="font-semibold text-[14px] text-[#0f172a] mb-[4px]">{item}</p>
+                    <p className="text-[11px] text-[#94a3b8]">Action required</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Live classes */}
+            <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px]">
+              <div>
+                <h3 className="font-bold text-[18px] text-[#0f172a]">Live classes</h3>
+                <p className="text-[13px] text-[#94a3b8] mt-[4px]">Join your scheduled sessions</p>
+              </div>
+              <div className="flex flex-col w-full gap-[12px]">
+                {['Upcoming class', 'Join live session', 'Live class reminder'].map((item) => (
+                  <div key={item} className="flex items-center justify-between p-[14px] border border-black/[0.08] rounded-[6px]">
+                    <p className="font-semibold text-[14px] text-[#0f172a]">{item}</p>
+                    <Video className="h-[18px] w-[18px] text-[#5b3df6]" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Quiz section */}
+            <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px]">
+              <div>
+                <h3 className="font-bold text-[18px] text-[#0f172a]">Quiz section</h3>
+                <p className="text-[13px] text-[#94a3b8] mt-[4px]">Test your knowledge and earn certificates</p>
+              </div>
+              <div className="flex flex-col w-full gap-[12px]">
+                {['Attempt quiz', 'View score', 'Download certificate'].map((item) => (
+                  <div key={item} className="flex items-center justify-between p-[14px] border border-black/[0.08] rounded-[6px]">
+                    <p className="font-semibold text-[14px] text-[#0f172a]">{item}</p>
+                    <Trophy className="h-[18px] w-[18px] text-[#5b3df6]" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
