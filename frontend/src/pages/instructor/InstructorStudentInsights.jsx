@@ -61,22 +61,22 @@ export default function InstructorStudentInsights() {
 
   return (
     <div className="min-h-full bg-[#F7FAFD]">
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
         {/* Hero Section */}
-        <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
-          <div className="flex items-start justify-between w-full">
-            <div className="flex flex-col gap-[11px] items-start relative shrink-0">
-              <div className="flex gap-2">
+        <section className="w-full shrink-0 rounded-[8px] border border-black/[0.08] border-solid bg-gradient-to-br from-white to-[#e8f5ff] px-4 pb-5 pt-5 sm:px-6 sm:pb-6 sm:pt-6">
+          <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-start">
+            <div className="flex min-w-0 flex-1 flex-col gap-[11px] items-start">
+              <div className="flex flex-wrap gap-2">
                 <span className="inline-flex h-[28px] items-center px-[10px] rounded-[12px] text-[12px] font-medium bg-[#e8f5ff] text-[#0f172a]">Class 9 to 10</span>
                 <span className="inline-flex h-[28px] items-center px-[10px] rounded-[12px] text-[12px] font-medium bg-[#2dd4bf] text-[#023b33]">128 active students</span>
               </div>
-              <div className="flex flex-col font-bold h-[31.59px] justify-center leading-[0] text-[#0f172a] text-[28px]">
+              <div className="text-[22px] font-bold leading-tight text-[#0f172a] sm:text-[26px] lg:text-[28px]">
                 Student performance and engagement overview
               </div>
-              <div className="flex flex-col font-normal h-[17px] justify-center leading-[0] text-[#94a3b8] text-[14px]">
+              <div className="text-[13px] leading-relaxed text-[#94a3b8] sm:text-[14px]">
                 Track attendance consistency, assignment completion, and class engagement to identify learners who need support and students who are leading this term.
               </div>
-              <div className="flex gap-4 text-[13px] text-[#94a3b8]">
+              <div className="flex flex-col gap-2 text-[12px] text-[#94a3b8] sm:text-[13px] xl:flex-row xl:flex-wrap xl:gap-4">
                 <span className="inline-flex items-center gap-1">
                   <Users className="h-4 w-4 text-[#5b3df6]" />
                   92% average attendance across all tracked classes
@@ -85,15 +85,15 @@ export default function InstructorStudentInsights() {
                 <span>16 students flagged for additional follow-up</span>
               </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex w-full flex-col gap-2 sm:flex-row lg:w-auto">
               <button 
                 onClick={() => setShowFilterModal(true)}
-                className="inline-flex items-center gap-2 h-[40px] px-[16px] rounded-[6px] text-[14px] font-medium bg-[#5b3df6] text-white hover:bg-[#4c2dd9] transition-colors cursor-pointer"
+                className="inline-flex h-[40px] w-full items-center justify-center gap-2 rounded-[6px] bg-[#5b3df6] px-[16px] text-[14px] font-medium text-white transition-colors cursor-pointer hover:bg-[#4c2dd9] sm:w-auto"
               >
                 <Filter className="h-[18px] w-[18px]" />
                 Filter insights
               </button>
-              <button className="inline-flex items-center gap-2 h-[40px] px-[17px] rounded-[6px] text-[14px] font-medium bg-white text-[#0f172a] border border-black/[0.08] hover:bg-[#f1f5f9] transition-colors cursor-pointer">
+              <button className="inline-flex h-[40px] w-full items-center justify-center gap-2 rounded-[6px] border border-black/[0.08] bg-white px-[17px] text-[14px] font-medium text-[#0f172a] transition-colors cursor-pointer hover:bg-[#f1f5f9] sm:w-auto">
                 <FileText className="h-[18px] w-[18px]" />
                 View reports
               </button>
@@ -102,11 +102,11 @@ export default function InstructorStudentInsights() {
         </section>
 
         {/* Stats Grid */}
-        <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))]">
+        <div className="grid grid-cols-1 gap-x-[16px] gap-y-[16px] xl:grid-cols-[repeat(2,minmax(0,1fr))]">
           <div className="bg-white border border-black/[0.08] rounded-[8px] p-[21px]">
             <h3 className="text-[18px] font-bold text-[#0f172a] m-0">Student overview</h3>
             <p className="text-[13px] text-[#94a3b8] mt-[4px] mb-[16px]">Monitor engagement, attendance, and academic consistency across your current groups.</p>
-            <div className="grid grid-cols-4 gap-[16px]">
+            <div className="grid grid-cols-2 gap-[16px] lg:grid-cols-4">
               <div className="bg-[#f8fafc] rounded-[6px] p-[14px]">
                 <div className="text-[13px] font-medium text-[#94a3b8]">Students tracked</div>
                 <div className="text-[30px] font-bold text-[#0f172a] mt-[6px]">94</div>
@@ -142,7 +142,7 @@ export default function InstructorStudentInsights() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[1.7fr_1fr]">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-[1.7fr_1fr]">
           {/* Student highlights */}
           <div className="bg-white border border-black/[0.08] rounded-[8px] flex flex-col">
             <div className="px-[21px] pt-[21px] pb-[16px] flex justify-between items-start gap-4">
@@ -157,7 +157,7 @@ export default function InstructorStudentInsights() {
             <div className="flex flex-col gap-[12px] px-[21px] pb-[21px]">
               {students.map((student, i) => (
                 <div key={i} className="p-[16px] border border-black/[0.08] rounded-[6px]">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                     <div className="flex items-center gap-3 flex-1 min-w-0">
                       <img src={student.avatar} alt="" className="h-10 w-10 rounded-full object-cover flex-shrink-0" />
                       <div className="min-w-0 flex-1">
@@ -165,7 +165,7 @@ export default function InstructorStudentInsights() {
                         <div className="text-[11px] text-[#94a3b8] mt-[2px]">{student.class}</div>
                       </div>
                     </div>
-                    <div className="grid grid-cols-3 gap-3 text-[11px] text-[#64748b] mx-4">
+                    <div className="grid grid-cols-1 gap-2 text-[11px] text-[#64748b] sm:grid-cols-2 lg:mx-4 lg:grid-cols-3">
                       <div>{student.attendance}</div>
                       <div>{student.assignments}</div>
                       <div>{student.engagement}</div>
@@ -231,7 +231,7 @@ export default function InstructorStudentInsights() {
       {/* Filter Modal */}
       {showFilterModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="w-[480px] max-h-[90vh] overflow-y-auto bg-white rounded-[8px] shadow-xl">
+          <div className="w-[calc(100%-1.5rem)] max-h-[90vh] overflow-y-auto bg-white rounded-[8px] shadow-xl sm:w-[480px]">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-5 border-b border-black/[0.08] sticky top-0 bg-white">
               <div className="flex items-center gap-2">
@@ -375,7 +375,7 @@ export default function InstructorStudentInsights() {
             </div>
 
             {/* Modal Footer */}
-            <div className="flex gap-3 p-5 border-t border-black/[0.08] sticky bottom-0 bg-white">
+            <div className="sticky bottom-0 flex flex-col gap-3 p-5 border-t border-black/[0.08] bg-white sm:flex-row">
               <button
                 onClick={handleClearAll}
                 className="flex-1 h-10 border border-black/[0.08] rounded-[6px] text-[13px] font-medium text-[#64748b] hover:bg-gray-50 transition-colors"

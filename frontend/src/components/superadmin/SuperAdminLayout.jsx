@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import {
   Shield,
@@ -27,10 +27,24 @@ const links = [
 export default function SuperAdminLayout() {
   const location = useLocation()
   const showProfileNav = location.pathname === '/superadmin/profile'
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   return (
-    <div className="flex h-screen min-w-[1280px] bg-[#f6f8fa] text-[#0f172a]">
-      <aside className="flex w-[240px] shrink-0 flex-col border-r border-black/[0.08] bg-white">
+    <div className="flex h-screen w-full min-w-0 overflow-hidden bg-[#f6f8fa] text-[#0f172a]">
+      {isSidebarOpen ? (
+        <button
+          type="button"
+          className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+          aria-label="Close sidebar"
+        />
+      ) : null}
+
+      <aside
+        className={`fixed inset-y-0 left-0 z-50 flex w-[260px] shrink-0 flex-col border-r border-black/[0.08] bg-white transition-transform duration-200 lg:static lg:z-auto lg:w-[240px] lg:translate-x-0 ${
+          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
         <div className="flex items-center gap-3 px-[18px] pt-4 pb-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#ede7ff]">
             <Shield className="h-5 w-5 text-[#5b3df6]" strokeWidth={2} />
@@ -48,6 +62,7 @@ export default function SuperAdminLayout() {
               key={link.to}
               to={link.to}
               end={link.end}
+              onClick={() => setIsSidebarOpen(false)}
               className={({ isActive }) =>
                 `flex items-center gap-[2px] rounded-md px-3 py-2.5 text-[13.5px] font-medium transition-colors ${
                   isActive
@@ -67,6 +82,7 @@ export default function SuperAdminLayout() {
               key={link.to}
               to={link.to}
               end={link.end}
+              onClick={() => setIsSidebarOpen(false)}
               className={({ isActive }) =>
                 `flex items-center gap-[2px] rounded-md px-3 py-2.5 text-[13.5px] font-medium transition-colors ${
                   isActive
@@ -86,6 +102,7 @@ export default function SuperAdminLayout() {
               key={link.to}
               to={link.to}
               end={link.end}
+              onClick={() => setIsSidebarOpen(false)}
               className={({ isActive }) =>
                 `flex items-center gap-[1.5px] rounded-md px-3 py-2.5 text-[13.5px] font-medium transition-colors ${
                   isActive
@@ -101,6 +118,7 @@ export default function SuperAdminLayout() {
           {showProfileNav ? (
             <NavLink
               to="/superadmin/profile"
+              onClick={() => setIsSidebarOpen(false)}
               className={({ isActive }) =>
                 `flex items-center gap-[1.5px] rounded-md px-3 py-2.5 text-[13.5px] font-medium transition-colors ${
                   isActive ? 'bg-[#ede7ff] text-[#5b3df6]' : 'text-[#0f172a] hover:bg-slate-100'
@@ -127,8 +145,8 @@ export default function SuperAdminLayout() {
         </div>
       </aside>
 
-      <main className="flex min-w-0 flex-1 flex-col overflow-y-auto">
-        <HeaderPanel />
+      <main className="flex min-w-0 flex-1 flex-col overflow-hidden">
+        <HeaderPanel onMenuToggle={() => setIsSidebarOpen(true)} />
         <div className="flex-1 overflow-x-hidden overflow-y-auto">
           <Outlet />
         </div>

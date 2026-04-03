@@ -354,7 +354,7 @@ function BasicsStep({ form, onChange }) {
       </div>
 
       {/* Sidebar */}
-      <aside className="w-[300px] shrink-0 space-y-4">
+      <aside className="w-full shrink-0 space-y-4 xl:w-[300px]">
         <div className="rounded-lg border border-black/[0.08] bg-white p-4">
           <h3 className="text-sm font-bold text-[#0f172a] mb-1">Setup summary</h3>
           <p className="text-[12px] text-[#6b7280] mb-3">A quick view of what is ready before the course goes to review.</p>
@@ -832,13 +832,13 @@ function CreateCoursePage({ onBack, onCreate }) {
 
   return (
     <div className="min-h-full bg-[#F7FAFD]">
-      <div className="p-8 pb-16">
+      <div className="p-4 pb-12 sm:p-6 sm:pb-16 lg:p-8">
         {/* Header — same style as AdminCourseManagement */}
         <section
           className="relative overflow-hidden rounded-lg border border-black/[0.08] p-6"
           style={{ background: 'linear-gradient(127.823deg, rgb(255,255,255) 0%, rgb(232,245,255) 100%)' }}
         >
-          <div className="flex flex-col gap-4 pr-4 md:pr-80">
+          <div className="flex flex-col gap-4 pr-0 md:pr-80">
             {/* Back breadcrumb */}
             <button
               onClick={onBack}
@@ -849,7 +849,7 @@ function CreateCoursePage({ onBack, onCreate }) {
             </button>
 
             <span className="inline-flex w-fit rounded-xl bg-[#ffd966] px-2.5 py-1.5 text-[11.915px] font-medium text-[#4b2e00]">Create</span>
-            <h2 className="max-w-[650px] text-[27.801px] font-bold leading-[1.2] text-[#0f172a]">
+            <h2 className="max-w-[650px] text-[24px] font-bold leading-[1.2] text-[#0f172a] sm:text-[27.801px]">
               {activeStep === 'pricing' ? 'Set pricing, billing, and discount rules before publishing.'
                : activeStep === 'publish' ? 'Review settings and launch your course to learners.'
                : activeStep === 'content' ? 'Build your course modules, lessons, and shared resources.'
@@ -875,7 +875,7 @@ function CreateCoursePage({ onBack, onCreate }) {
           </div>
 
           {/* Top-right action buttons */}
-          <div className="mt-6 flex flex-wrap gap-3 md:absolute md:right-6 md:top-6 md:mt-0">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:absolute md:right-6 md:top-6 md:mt-0">
             <button
               type="button"
               onClick={handleSaveDraft}
@@ -921,7 +921,7 @@ function EditCourseModal({ course, onClose, onSave }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="w-[560px] max-h-[90vh] overflow-y-auto bg-white rounded-[16px] shadow-xl">
+      <div className="w-[calc(100%-1.5rem)] sm:w-[560px] max-h-[90vh] overflow-y-auto bg-white rounded-[16px] shadow-xl">
         <div className="flex items-center justify-between p-5 border-b border-black/[0.08]">
           <h2 className="text-[18px] font-bold text-[#0f172a]">Edit Course</h2>
           <button onClick={onClose} className="text-[#94a3b8] hover:text-[#0f172a]"><X className="h-5 w-5" /></button>
@@ -935,7 +935,7 @@ function EditCourseModal({ course, onClose, onSave }) {
                 : <input type={type} name={name} value={form[name]} onChange={handleChange} className="w-full rounded-[8px] border border-black/[0.08] px-3 py-2 text-[13px] focus:outline-none focus:ring-2 focus:ring-[#5b3df6]" />}
             </div>
           ))}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {[['category', 'Category', ['Science', 'Programming', 'Language', 'Mathematics', 'Arts']], ['level', 'Level', ['Beginner', 'Intermediate', 'Advanced']]].map(([name, label, opts]) => (
               <div key={name}>
                 <label className="block text-[13px] font-semibold text-[#0f172a] mb-1">{label}</label>
@@ -1016,20 +1016,20 @@ export default function InstructorCourseManagement() {
 
   return (
     <div className="min-h-full bg-[#f6f8fa]">
-      <div className="space-y-4 p-5">
+      <div className="space-y-4 p-4 sm:p-5">
         {/* Hero */}
         <section className="rounded-[12px] border border-black/[0.08] bg-gradient-to-br from-white to-[#e8f5ff] p-6">
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col items-start justify-between gap-4 lg:flex-row">
             <div>
               <div className="inline-flex items-center gap-2 rounded-[12px] bg-[#ffd966] px-3 py-1.5 mb-4">
                 <BookOpen className="h-4 w-4 text-[#4b2e00]" />
                 <span className="text-[12px] font-medium text-[#4b2e00]">Instructor Workspace</span>
               </div>
-              <h1 className="text-[32px] font-bold leading-tight text-[#0f172a]">My Courses</h1>
+              <h1 className="text-[26px] font-bold leading-tight text-[#0f172a] sm:text-[32px]">My Courses</h1>
               <p className="mt-2 max-w-[560px] text-[13px] text-[#94a3b8]">
                 Create, manage, and publish your courses. Track student enrollment, performance, and course engagement all in one place.
               </p>
-              <div className="mt-4 flex gap-3">
+              <div className="mt-4 flex flex-wrap gap-3">
                 <button
                   onClick={() => setShowCreatePage(true)}
                   className="inline-flex items-center gap-2 bg-[#5b3df6] px-4 py-2 rounded-[8px] text-[13px] font-semibold text-white hover:bg-[#4a2ed8] transition-colors"
@@ -1051,7 +1051,7 @@ export default function InstructorCourseManagement() {
         </section>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <StatCard label="Total Courses" value={stats.total} icon={BookOpen} />
           <StatCard label="Published" value={stats.published} icon={CheckCircle} />
           <StatCard label="In Draft" value={stats.draft} icon={Edit} />

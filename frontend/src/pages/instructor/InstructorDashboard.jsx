@@ -176,12 +176,8 @@ function Stat({ title, value, meta, icon }) {
         <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[19px] rounded-[8px]">
             <div className="flex items-center justify-between w-full">
                 <div className="flex flex-col items-start">
-                    <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#94a3b8] text-[14px]">
-                        {title}
-                    </div>
-                    <div className="flex flex-col font-bold h-[30px] justify-center leading-[0] text-[#0f172a] text-[30px] tracking-[-0.6px]">
-                        {value}
-                    </div>
+                    <div className="text-[13px] font-medium text-[#94a3b8] sm:text-[14px]">{title}</div>
+                    <div className="text-[28px] font-bold leading-tight tracking-[-0.6px] text-[#0f172a] sm:text-[30px]">{value}</div>
                 </div>
                 <div className="bg-[#e8f5ff] flex items-center justify-center relative rounded-[6px] shrink-0 size-[40px]">
                     {icon}
@@ -202,12 +198,12 @@ function Stat({ title, value, meta, icon }) {
 function OnlineClassesCard() {
     return (
         <div className="bg-white border border-black/[0.08] rounded-[8px] flex flex-col">
-            <div className="px-[21px] pt-[21px] pb-[16px] flex justify-between items-start gap-4">
+            <div className="px-[21px] pt-[21px] pb-[16px] flex flex-col justify-between items-start gap-4 sm:flex-row">
                 <div>
                     <h3 className="text-[18px] font-bold text-[#0f172a] m-0">Online Classes &amp; Practical Labs</h3>
                     <p className="text-[13px] text-[#94a3b8] mt-[4px]">Live classes, recorded lessons, lab sessions, and session management</p>
                 </div>
-                <BtnOutlineSm>Manage</BtnOutlineSm>
+                <BtnOutlineSm className="w-full justify-center sm:w-auto">Manage</BtnOutlineSm>
             </div>
             <div className="flex flex-col gap-[16px] px-[21px] pb-[21px]">
                 {onlineClassItems.map((item, i) => (
@@ -227,18 +223,18 @@ function OnlineClassesCard() {
 function WeeklyTestsCard() {
     return (
         <div className="bg-white border border-black/[0.08] rounded-[8px] flex flex-col">
-            <div className="px-[21px] pt-[21px] pb-[16px] flex justify-between items-start gap-4">
+            <div className="px-[21px] pt-[21px] pb-[16px] flex flex-col justify-between items-start gap-4 sm:flex-row">
                 <div>
                     <h3 className="text-[18px] font-bold text-[#0f172a] m-0">Weekly Tests</h3>
                     <p className="text-[13px] text-[#94a3b8] mt-[4px]">MCQ-based assessments with automatic evaluation and performance tracking</p>
                 </div>
-                <BtnOutlineSm>Create test</BtnOutlineSm>
+                <BtnOutlineSm className="w-full justify-center sm:w-auto">Create test</BtnOutlineSm>
             </div>
             <div className="flex flex-col px-[21px] pb-[21px]">
                 {weeklyTestItems.map((item, i) => (
                     <div
                         key={i}
-                        className={`flex items-center gap-[16px] py-[14px]
+                        className={`flex flex-col items-start gap-[12px] py-[14px] sm:flex-row sm:items-center sm:justify-between
               ${i !== weeklyTestItems.length - 1 ? "border-b border-black/[0.08]" : ""}
               ${i === 0 ? "pt-[8px]" : ""}
               ${i === weeklyTestItems.length - 1 ? "pb-[8px]" : ""}
@@ -267,12 +263,12 @@ function WeeklyTestsCard() {
 function TeacherTrainingCard() {
     return (
         <div className="bg-white border border-black/[0.08] rounded-[8px] flex flex-col">
-            <div className="px-[21px] pt-[21px] pb-[16px] flex justify-between items-start gap-4">
+            <div className="px-[21px] pt-[21px] pb-[16px] flex flex-col justify-between items-start gap-4 sm:flex-row">
                 <div>
                     <h3 className="text-[18px] font-bold text-[#0f172a] m-0">Teacher Training</h3>
                     <p className="text-[13px] text-[#94a3b8] mt-[4px]">Live session plan for onboarding, methodology refreshers, and platform enablement</p>
                 </div>
-                <BtnOutlineSm>Schedule</BtnOutlineSm>
+                <BtnOutlineSm className="w-full justify-center sm:w-auto">Schedule</BtnOutlineSm>
             </div>
             <div className="flex flex-col gap-[16px] px-[21px] pb-[21px]">
                 {teacherTrainingItems.map((item, i) => (
@@ -292,20 +288,20 @@ function TeacherTrainingCard() {
 function SchoolEventsCard() {
     return (
         <div className="bg-white border border-black/[0.08] rounded-[8px] flex flex-col">
-            <div className="px-[21px] pt-[21px] pb-[16px] flex justify-between items-start gap-4">
+            <div className="px-[21px] pt-[21px] pb-[16px] flex flex-col justify-between items-start gap-4 sm:flex-row">
                 <div>
                     <h3 className="text-[18px] font-bold text-[#0f172a] m-0">School Events</h3>
                     <p className="text-[13px] text-[#94a3b8] mt-[4px]">Showcase event details, participation options, and updates</p>
                 </div>
-                <BtnOutlineSm>View all</BtnOutlineSm>
+                <BtnOutlineSm className="w-full justify-center sm:w-auto">View all</BtnOutlineSm>
             </div>
             <div className="flex flex-col gap-[16px] px-[21px] pb-[21px]">
                 {schoolEvents.map((item, i) => (
-                    <div key={i} className="flex items-center gap-[16px] p-[16px] border border-black/[0.08] rounded-[6px]">
+                    <div key={i} className="flex flex-col items-start gap-[12px] p-[16px] border border-black/[0.08] rounded-[6px] sm:flex-row sm:items-center">
                         <IconBox icon={item.icon} />
                         <div className="flex-1 min-w-0">
-                            <div className="text-[14px] font-semibold text-[#0f172a] leading-snug truncate">{item.title}</div>
-                            <div className="text-[13px] text-[#94a3b8] mt-[4px] truncate">{item.meta}</div>
+                            <div className="text-[14px] font-semibold text-[#0f172a] leading-snug">{item.title}</div>
+                            <div className="text-[13px] text-[#94a3b8] mt-[4px] leading-relaxed">{item.meta}</div>
                         </div>
                         <div className="flex-shrink-0">
                             {item.btn ? (
@@ -325,30 +321,30 @@ function SchoolEventsCard() {
 export default function InstructorDashboard() {
     return (
         <div className="min-h-full bg-[#F7FAFD]">
-            <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+            <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
                 {/* ── Hero Card ── */}
-                <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
-                    <div className="flex flex-col gap-[11px] items-start relative shrink-0">
+                <section className="w-full shrink-0 rounded-[8px] border border-black/[0.08] border-solid bg-gradient-to-br from-white to-[#e8f5ff] px-4 pb-5 pt-5 sm:px-6 sm:pb-6 sm:pt-6">
+                    <div className="flex flex-col items-start gap-[11px]">
                         <div className="bg-[#ffd966] flex items-center px-[10px] py-[6.5px] rounded-[12px] shrink-0">
-                            <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#4b2e00] text-[12px]">
+                            <div className="text-[12px] font-medium text-[#4b2e00]">
                                 Learning platform snapshot
                             </div>
                         </div>
-                        <div className="flex flex-col font-bold h-[31.59px] justify-center leading-[0] text-[#0f172a] text-[28px]">
+                        <div className="text-[22px] font-bold leading-tight text-[#0f172a] sm:text-[26px] lg:text-[28px]">
                             Online classes, practical labs, tests, and school events in one place.
                         </div>
-                        <div className="flex flex-col font-normal h-[17px] justify-center leading-[0] text-[#94a3b8] text-[14px]">
+                        <div className="text-[13px] leading-relaxed text-[#94a3b8] sm:text-[14px]">
                             A unified dashboard for live and recorded classes, teacher training, MCQ-based weekly tests with same-day results, and active participation in school events.
                         </div>
                     </div>
-                    <div className="mt-4 flex items-center gap-[12px]">
-                        <BtnPrimary>📹 Open Classes</BtnPrimary>
-                        <BtnOutline>📅 This week</BtnOutline>
+                    <div className="mt-4 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+                        <BtnPrimary className="w-full justify-center sm:w-auto">📹 Open Classes</BtnPrimary>
+                        <BtnOutline className="w-full justify-center sm:w-auto">📅 This week</BtnOutline>
                     </div>
                 </section>
 
                 {/* ── Stats Grid ── */}
-                <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(4,minmax(0,1fr))]">
+                <div className="grid grid-cols-1 gap-x-[16px] gap-y-[16px] sm:grid-cols-2 xl:grid-cols-4">
                     {stats.map((s) => (
                         <Stat 
                             key={s.id}
@@ -361,7 +357,7 @@ export default function InstructorDashboard() {
                 </div>
 
                 {/* ── Content Grid 2×2 ── */}
-                <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-2">
+                <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-2">
                     <OnlineClassesCard />
                     <WeeklyTestsCard />
                     <TeacherTrainingCard />

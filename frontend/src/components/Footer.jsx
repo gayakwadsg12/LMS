@@ -1,49 +1,38 @@
 // Footer.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col self-stretch bg-slate-900 pt-[79px] pb-10 px-36 gap-[39px]">
-      <div className="flex justify-between items-start self-stretch">
-        <div className="flex shrink-0 items-center mb-[41px]">
+    <footer className="self-stretch bg-slate-900 px-4 pb-8 pt-12 sm:px-6 lg:px-10 xl:px-16">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8">
+        <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+          <div className="flex items-center">
           <img
             src={"https://storage.googleapis.com/tagjs-prod.appspot.com/v1/ffSyZzeazd/8khssezv_expires_30_days.png"}
-            className="w-12 h-12 mr-[13px] object-fill"
+            className="mr-3 h-10 w-10 object-fill sm:h-12 sm:w-12"
             alt="Logo"
           />
-          <span className="text-white text-[32px] font-bold mr-[63px]">
-            {"LMS"}
-          </span>
+          <span className="text-2xl font-bold text-white sm:text-[32px]">LMS</span>
         </div>
-        <div className="flex shrink-0 items-center mt-3">
-          <div className="flex flex-col shrink-0 items-start py-1.5 mr-[41px]">
-            <span className="text-white text-base cursor-pointer hover:text-gray-300 transition-colors">
-              {"About Us"}
-            </span>
-          </div>
-          <div className="flex flex-col shrink-0 items-start py-1.5 mr-10">
-            <span className="text-white text-base cursor-pointer hover:text-gray-300 transition-colors">
-              {"Contact"}
-            </span>
-          </div>
-          <div className="flex flex-col shrink-0 items-start py-1 px-[1px] mr-10">
-            <span className="text-white text-base cursor-pointer hover:text-gray-300 transition-colors">
-              {"Privacy Policy"}
-            </span>
-          </div>
-          <div className="flex flex-col shrink-0 items-start py-1.5">
-            <span className="text-white text-base cursor-pointer hover:text-gray-300 transition-colors">
-              {"Terms"}
-            </span>
+
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <Link to="/about" className="text-sm text-white no-underline transition-colors hover:text-gray-300 sm:text-base">
+              About Us
+            </Link>
+            <Link to="/contact" className="text-sm text-white no-underline transition-colors hover:text-gray-300 sm:text-base">
+              Contact
+            </Link>
+            <span className="cursor-pointer text-sm text-white transition-colors hover:text-gray-300 sm:text-base">Privacy Policy</span>
+            <span className="cursor-pointer text-sm text-white transition-colors hover:text-gray-300 sm:text-base">Terms</span>
           </div>
         </div>
+
+        <div className="border-t border-white/15 pt-4 text-center">
+          <span className="text-sm text-white/90">© 2025 EduKids Platform. All rights reserved.</span>
+        </div>
       </div>
-      <div className="flex flex-col items-center self-stretch py-1">
-        <span className="text-white text-[15px]">
-          {"© 2025 EduKids Platform. All rights reserved."}
-        </span>
-      </div>
-    </div>
+    </footer>
   );
 };
 

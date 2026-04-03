@@ -79,12 +79,12 @@ export default function StudentCertificates() {
 
   return (
     <div className="min-h-full bg-[#F7FAFD]">
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
         {/* Top 3-column row */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-3">
           {/* Your verified achievements */}
           <div className="border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px] bg-gradient-to-br from-white to-[#e8f5ff]">
-            <div className="flex items-start justify-between w-full">
+            <div className="flex flex-col items-start justify-between gap-3 w-full sm:flex-row sm:items-start">
               <div className="bg-[#ffd966] inline-flex items-center px-[10px] py-[6.5px] rounded-[12px]">
                 <Award className="h-[14px] w-[14px] mr-[6px] text-[#4b2e00]" />
                 <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#4b2e00] text-[12px]">
@@ -102,7 +102,7 @@ export default function StudentCertificates() {
             <p className="text-[13px] text-[#94a3b8]">
               Access, download, and share course completion certificates issued across your enrolled programs.
             </p>
-            <div className="grid grid-cols-3 gap-[16px] w-full">
+            <div className="grid w-full grid-cols-1 gap-[16px] sm:grid-cols-3">
               {[['Issued certificates', '12'], ['Ready to download', '9'], ['In review', '3']].map(([label, val]) => (
                 <div key={label} className="bg-white rounded-[8px] p-[14px] border border-black/[0.08]">
                   <p className="text-[11px] text-[#94a3b8] leading-tight">{label}</p>
@@ -168,15 +168,15 @@ export default function StudentCertificates() {
         </div>
 
         {/* Bottom: certs + activity */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[1fr_280px]">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-[1fr_280px]">
           <div className="flex flex-col gap-[16px]">
             {/* Section header + filters */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
               <div>
                 <h2 className="font-bold text-[20px] text-[#0f172a]">Recent certificates</h2>
                 <p className="text-[13px] text-[#94a3b8] mt-[4px]">Issued this year across completed programs</p>
               </div>
-              <div className="flex gap-[8px]">
+              <div className="flex flex-wrap gap-[8px]">
                 {['All', 'Downloaded', 'Pending'].map(f => (
                   <button
                     key={f}
@@ -192,7 +192,7 @@ export default function StudentCertificates() {
             </div>
 
             {/* Certificate cards grid */}
-            <div className="grid grid-cols-2 gap-[24px]">
+            <div className="grid grid-cols-1 gap-[24px] lg:grid-cols-2">
               {filtered.map((cert) => (
                 <article key={cert.title} className="bg-white border border-black/[0.08] border-solid rounded-[8px] overflow-hidden">
                   {/* Card top */}
@@ -219,7 +219,7 @@ export default function StudentCertificates() {
                     {cert.awardedTo && <p className="mb-[4px] text-[11px] text-[#94a3b8]">{cert.program}</p>}
 
                     {/* Title + status */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
                       <h3 className="font-bold text-[16px] text-[#0f172a]">{cert.title}</h3>
                       <span className={`inline-flex h-[26px] items-center px-[10px] rounded-[10px] text-[11px] font-medium ${cert.statusColor}`}>{cert.status}</span>
                     </div>
@@ -234,14 +234,14 @@ export default function StudentCertificates() {
 
                     {/* Actions */}
                     {!cert.pending && (
-                      <div className="mt-[16px] flex gap-[12px]">
-                        <button className="bg-[#5b3df6] flex items-center gap-[8px] h-[36px] justify-center px-[14px] rounded-[6px]">
+                      <div className="mt-[16px] flex flex-col gap-[12px] sm:flex-row">
+                        <button className="bg-[#5b3df6] flex h-[36px] w-full items-center justify-center gap-[8px] px-[14px] rounded-[6px] sm:w-auto">
                           <Download className="h-[14px] w-[14px] text-white" />
                           <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-white text-[12px]">
                             Download PDF
                           </div>
                         </button>
-                        <button className="border border-black/[0.08] flex items-center justify-center h-[36px] px-[14px] rounded-[6px] bg-white">
+                        <button className="border border-black/[0.08] flex h-[36px] w-full items-center justify-center px-[14px] rounded-[6px] bg-white sm:w-auto">
                           <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#0f172a] text-[12px]">
                             View
                           </div>

@@ -4,8 +4,8 @@ const DECORATIVE_IMG = 'https://www.figma.com/api/mcp/asset/ce009895-65be-4c55-8
 
 export default function Login() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-8 box-border bg-gradient-to-br from-[#1c113b] via-[#3a2286] to-[#5d3df0] font-[Inter,_'Segoe_UI',_Roboto,_sans-serif]">
-      <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-[1fr_460px] items-center gap-13">
+    <div className="min-h-screen w-full overflow-x-hidden overflow-y-auto bg-gradient-to-br from-[#1c113b] via-[#3a2286] to-[#5d3df0] p-4 font-[Inter,_'Segoe_UI',_Roboto,_sans-serif] sm:p-6 lg:p-8">
+      <div className="mx-auto grid min-h-[calc(100vh-2rem)] w-full max-w-[1300px] grid-cols-1 items-start gap-8 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1fr_460px] lg:items-center lg:gap-13">
         {/* Left Section */}
         <section className="text-white">
           <h1 className="m-0 text-[64px] leading-[1.15] font-extrabold tracking-[-1.2px] whitespace-pre-line max-lg:text-[44px] max-sm:text-[34px]">
@@ -33,13 +33,13 @@ export default function Login() {
         </section>
 
         {/* Card Section */}
-        <section className="relative max-lg:max-w-[520px] max-lg:mx-auto">
+        <section className="relative w-full max-w-[520px] lg:h-full lg:max-w-none">
           <img 
             src={DECORATIVE_IMG} 
             alt="Education icon" 
-            className="absolute -top-9 -right-9 w-[110px] h-[110px] rounded-full border-6 border-white object-cover shadow-lg bg-white max-lg:hidden z-1" 
+            className="absolute -top-9 -right-9 w-[110px] h-[110px] rounded-full border-6 border-white object-cover shadow-lg bg-white max-lg:hidden z-[1]" 
           />
-          <div className="relative bg-white rounded-2xl shadow-2xl p-10 max-sm:p-5">
+          <div className="relative flex w-full flex-col rounded-2xl bg-white p-5 shadow-2xl sm:p-8 lg:h-full lg:max-h-[820px] lg:p-10">
             {/* Tabs */}
             <div className="flex gap-1.5 p-1.5 rounded-xl bg-[#f3f6f8] mb-7">
               <button type="button" className="flex-1 border-0 rounded-lg py-3 px-2.5 bg-white text-[#0b1020] shadow-sm text-sm font-semibold cursor-pointer">
@@ -56,7 +56,8 @@ export default function Login() {
             <h2 className="m-0 text-[#0b1020] text-[30px] leading-[1.15] font-extrabold">Welcome back</h2>
             <p className="mt-2 text-[#6b7480] text-sm">Enter your details to access your account.</p>
 
-            <form className="mt-6 flex flex-col gap-4" onSubmit={(event) => event.preventDefault()}>
+            <div className="mt-6 flex-1 overflow-y-auto pr-1">
+            <form className="flex flex-col gap-4" onSubmit={(event) => event.preventDefault()}>
               <label className="flex flex-col gap-2">
                 <span className="text-[#0b1020] text-sm font-semibold">Email Address</span>
                 <input 
@@ -79,15 +80,16 @@ export default function Login() {
                 <label className="flex items-center gap-2.5 text-[#6b7480] text-sm">
                   <input type="checkbox" defaultChecked /> Remember me
                 </label>
-                <button type="button" className="border-0 bg-none text-[#5d3df0] text-sm font-semibold cursor-pointer p-0">
+                <Link to="/forgetpassword" className="text-[#5d3df0] text-sm font-semibold no-underline">
                   Forgot password?
-                </button>
+                </Link>
               </div>
 
               <button type="submit" className="border-0 rounded-md bg-[#ff8a33] text-white text-base font-bold p-3.5 cursor-pointer mt-1">
                 Login to your account
               </button>
             </form>
+            </div>
 
             <div className="my-5.5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[#6b7480] text-xs font-semibold">
               <div className="border-t border-black/10"></div>
@@ -95,7 +97,7 @@ export default function Login() {
               <div className="border-t border-black/10"></div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3.5">
+            <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
               <button type="button" className="border border-black/10 rounded-md bg-white text-[#0b1020] p-3 text-sm font-bold cursor-pointer">
                 Google
               </button>

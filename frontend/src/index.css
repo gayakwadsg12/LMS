@@ -15,4 +15,12 @@ body,
 
 body {
   font-family: Inter, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
 }

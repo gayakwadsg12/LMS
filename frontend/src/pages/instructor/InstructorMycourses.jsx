@@ -228,7 +228,7 @@ function getLessonAction(lesson) {
 // ─────────────────────────────────────────────
 function BasicsStep({ form, onChange }) {
   return (
-    <div className="flex gap-6">
+    <div className="flex flex-col gap-6 xl:flex-row">
       {/* Main */}
       <div className="flex-1 space-y-5">
         {/* Course basics */}
@@ -240,7 +240,7 @@ function BasicsStep({ form, onChange }) {
             </div>
             <span className="inline-flex items-center rounded-xl bg-emerald-500 px-2.5 py-1 text-[11px] font-medium text-white">Auto-saved</span>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div className="flex flex-col gap-1.5">
               <FieldLabel>Course title</FieldLabel>
               <input name="title" value={form.title} onChange={onChange} placeholder="e.g., STEM Explorers Advanced" className="min-h-11 rounded-md border border-black/[0.08] px-4 py-2 text-sm text-[#0f172a] focus:outline-none focus:ring-2 focus:ring-[#5b3df6]" />
@@ -272,7 +272,7 @@ function BasicsStep({ form, onChange }) {
                 <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#94a3b8]" />
               </div>
             </div>
-            <div className="col-span-2 flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5 md:col-span-2">
               <FieldLabel>Short description</FieldLabel>
               <textarea name="description" value={form.description} onChange={onChange} rows={3} placeholder="A brief description shown on listing cards..." className="rounded-md border border-black/[0.08] px-4 py-2 text-sm text-[#0f172a] resize-none focus:outline-none focus:ring-2 focus:ring-[#5b3df6]" />
               <p className="text-[11px] text-[#6b7280]">Keep this under 220 characters for listing cards and landing pages.</p>
@@ -295,7 +295,7 @@ function BasicsStep({ form, onChange }) {
 
         {/* Cover & Assets */}
         <section className="rounded-lg border border-black/[0.08] bg-white p-5">
-          <div className="flex items-center justify-between mb-4">
+          <div className="mb-4 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
             <div>
               <h3 className="text-[16px] font-bold text-[#0f172a]">Cover and learning assets</h3>
               <p className="text-[12px] text-[#6b7280] mt-0.5">Add the hero visual and starter resources before building the full course outline.</p>
@@ -307,7 +307,7 @@ function BasicsStep({ form, onChange }) {
               { icon: <ImageIcon className="h-5 w-5 text-[#5b3df6]" />, title: 'Course cover image', desc: 'Upload a wide visual for course cards and public listings. Recommended ratio: 16:9.', btn: 'Choose File' },
               { icon: <FileStack className="h-5 w-5 text-[#5b3df6]" />, title: 'Starter files and PDFs', desc: 'Upload lesson notes, worksheets, and welcome materials learners receive at enrollment.', btn: 'Upload Files' },
             ].map((item, i) => (
-              <div key={i} className="flex items-center justify-between rounded-lg bg-[#f1f5f9] p-4 gap-4">
+              <div key={i} className="flex flex-col items-start justify-between rounded-lg bg-[#f1f5f9] p-4 gap-4 sm:flex-row sm:items-center">
                 <div className="flex gap-3 items-start">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#edebff]">{item.icon}</div>
                   <div>
@@ -315,7 +315,7 @@ function BasicsStep({ form, onChange }) {
                     <p className="text-[12px] text-[#6b7280] mt-0.5">{item.desc}</p>
                   </div>
                 </div>
-                <button type="button" className="shrink-0 inline-flex h-9 items-center justify-center rounded-md border border-black/[0.08] bg-white px-4 text-sm font-medium text-[#0f172a]">{item.btn}</button>
+                <button type="button" className="inline-flex h-9 w-full items-center justify-center rounded-md border border-black/[0.08] bg-white px-4 text-sm font-medium text-[#0f172a] sm:w-auto">{item.btn}</button>
               </div>
             ))}
           </div>
@@ -323,7 +323,7 @@ function BasicsStep({ form, onChange }) {
 
         {/* Module outline */}
         <section className="rounded-lg border border-black/[0.08] bg-white p-5">
-          <div className="flex items-center justify-between mb-4">
+          <div className="mb-4 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
             <div>
               <h3 className="text-[16px] font-bold text-[#0f172a]">Initial module outline</h3>
               <p className="text-[12px] text-[#6b7280] mt-0.5">Create the first structure now. You can add videos, quizzes, and assignments in the next step.</p>
@@ -338,7 +338,7 @@ function BasicsStep({ form, onChange }) {
               { n: '02', title: 'Robotics basics and sensors', meta: '4 lessons • 2 downloadable worksheets • Coding starter lab' },
               { n: '03', title: 'Build, test, and present', meta: '5 lessons • Final project • Peer showcase session' },
             ].map((m) => (
-              <li key={m.n} className="flex items-center justify-between rounded-md bg-[#f1f5f9] p-3.5 gap-3">
+              <li key={m.n} className="flex flex-col items-start justify-between rounded-md bg-[#f1f5f9] p-3.5 gap-3 sm:flex-row sm:items-center">
                 <div className="flex gap-3 items-center">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-black/[0.08] bg-white text-[13px] font-semibold text-[#0f172a]">{m.n}</div>
                   <div>
@@ -354,7 +354,7 @@ function BasicsStep({ form, onChange }) {
       </div>
 
       {/* Sidebar */}
-      <aside className="w-[300px] shrink-0 space-y-4">
+      <aside className="w-full shrink-0 space-y-4 xl:w-[300px]">
         <div className="rounded-lg border border-black/[0.08] bg-white p-4">
           <h3 className="text-sm font-bold text-[#0f172a] mb-1">Setup summary</h3>
           <p className="text-[12px] text-[#6b7280] mb-3">A quick view of what is ready before the course goes to review.</p>
@@ -410,7 +410,7 @@ function BasicsStep({ form, onChange }) {
 // ─────────────────────────────────────────────
 function ContentStep() {
   return (
-    <div className="grid grid-cols-[1.55fr_1fr] gap-5">
+    <div className="grid grid-cols-1 gap-5 xl:grid-cols-[1.55fr_1fr]">
       {/* Left */}
       <div className="space-y-4">
         <div className="bg-white border border-black/[0.08] rounded-lg p-4 flex items-center justify-between">
@@ -423,7 +423,7 @@ function ContentStep() {
 
         {initialModules.map((module) => (
           <div key={module.id} className="bg-white border border-black/[0.08] rounded-lg overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-3.5">
+            <div className="flex flex-col items-start justify-between gap-3 px-4 py-3.5 sm:flex-row sm:items-center">
               <div className="flex items-center gap-3 flex-1">
                 <div className="flex items-center justify-center w-9 h-9 rounded-md bg-[#f1f5f9] text-[#0f172a] font-bold text-sm border border-black/[0.08]">{module.moduleNumber}</div>
                 <div>
@@ -441,7 +441,7 @@ function ContentStep() {
             {module.lessons.length > 0 && (
               <div className="border-t border-black/[0.08] bg-[#fafcff] px-4 py-3.5 space-y-2.5">
                 {module.lessons.map((lesson, i) => (
-                  <div key={lesson.id} className="flex items-center justify-between p-3 bg-white border border-black/[0.08] rounded-lg">
+                  <div key={lesson.id} className="flex flex-col items-start justify-between gap-3 p-3 bg-white border border-black/[0.08] rounded-lg sm:flex-row sm:items-center">
                     <div className="flex items-start gap-3 flex-1">
                       <LessonIcon type={lesson.type} />
                       <div className="flex-1 min-w-0">
@@ -467,7 +467,7 @@ function ContentStep() {
             <button className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-[#0f172a] border border-black/[0.08] rounded-md bg-white hover:bg-gray-50">Add Resource</button>
           </div>
           <p className="text-[11px] text-[#94a3b8] mb-3">Materials available across modules to support the full course journey.</p>
-          <div className="grid grid-cols-3 gap-2.5">
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
             {sharedResources.map((r) => (
               <div key={r.id} className="flex flex-col gap-2 p-3 bg-[#f8fafc] border border-black/[0.08] rounded-lg">
                 <div className="w-8 h-8 rounded-md bg-[#ede9ff] flex items-center justify-center">
@@ -558,7 +558,7 @@ function ContentStep() {
 // ─────────────────────────────────────────────
 function PricingStep({ form, onChange }) {
   return (
-    <div className="grid grid-cols-[1.55fr_1fr] gap-5">
+    <div className="grid grid-cols-1 gap-5 xl:grid-cols-[1.55fr_1fr]">
       <div className="space-y-4">
         {/* Pricing model */}
         <section className="rounded-lg border border-black/[0.08] bg-white p-5">
@@ -590,7 +590,7 @@ function PricingStep({ form, onChange }) {
         <section className="rounded-lg border border-black/[0.08] bg-white p-5">
           <h3 className="text-[16px] font-bold text-[#0f172a] mb-0.5">Course price</h3>
           <p className="text-[12px] text-[#6b7280] mb-4">Configure the core fee, billing currency, and tax behavior.</p>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             <div>
               <FieldLabel>Base price</FieldLabel>
               <input name="basePrice" value={form.basePrice} onChange={onChange} placeholder="₹ 0" className="mt-1.5 w-full min-h-11 rounded-md border border-black/[0.08] px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5b3df6]" />
@@ -697,7 +697,7 @@ function PublishStep() {
   const [whatsapp, setWhatsapp] = useState(false)
 
   return (
-    <div className="grid grid-cols-[1.55fr_1fr] gap-5">
+    <div className="grid grid-cols-1 gap-5 xl:grid-cols-[1.55fr_1fr]">
       <div className="space-y-4">
         {/* Visibility */}
         <section className="rounded-lg border border-black/[0.08] bg-white p-5">
@@ -729,7 +729,7 @@ function PublishStep() {
         <section className="rounded-lg border border-black/[0.08] bg-white p-5">
           <h3 className="text-[16px] font-bold text-[#0f172a] mb-0.5">Enrollment & Capacity</h3>
           <p className="text-[12px] text-[#6b7280] mb-4">Set limits on when students can join and how many seats are available.</p>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             <div className="flex flex-col gap-1.5"><FieldLabel>Enrollment Start</FieldLabel><InputShell className="justify-between"><span className="text-sm text-[#0f172a]">Immediate</span><Calendar className="h-4 w-4 text-[#94a3b8]" /></InputShell></div>
             <div className="flex flex-col gap-1.5"><FieldLabel>Enrollment End</FieldLabel><InputShell className="justify-between"><span className="text-sm text-[#94a3b8]">No end date</span><Calendar className="h-4 w-4 text-[#94a3b8]" /></InputShell></div>
             <div className="flex flex-col gap-1.5"><FieldLabel>Maximum Capacity</FieldLabel><InputShell><span className="text-sm text-[#0f172a]">Unlimited</span></InputShell></div>
@@ -746,7 +746,7 @@ function PublishStep() {
               { icon: <Mail className="h-5 w-5 text-[#5b3df6]" />, bg: 'bg-[#ede9ff]', title: 'Welcome Email', desc: 'Sent automatically when a student enrolls.', enabled: welcomeEmail, toggle: () => setWelcomeEmail(!welcomeEmail) },
               { icon: <MessageSquare className="h-5 w-5 text-emerald-600" />, bg: 'bg-[#f0fdf4]', title: 'WhatsApp Notification', desc: 'Send a quick welcome message via WhatsApp.', enabled: whatsapp, toggle: () => setWhatsapp(!whatsapp) },
             ].map((item) => (
-              <div key={item.title} className="flex items-center justify-between p-4 rounded-lg border border-black/[0.08] bg-[#f8fafc]">
+              <div key={item.title} className="flex flex-col items-start justify-between gap-3 rounded-lg border border-black/[0.08] bg-[#f8fafc] p-4 sm:flex-row sm:items-center">
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center`}>{item.icon}</div>
                   <div><p className="text-[13px] font-semibold text-[#0f172a]">{item.title}</p><p className="text-[12px] text-[#6b7280]">{item.desc}</p></div>
@@ -921,7 +921,7 @@ function EditCourseModal({ course, onClose, onSave }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="w-[560px] max-h-[90vh] overflow-y-auto bg-white rounded-[16px] shadow-xl">
+      <div className="w-[calc(100%-1.5rem)] max-h-[90vh] overflow-y-auto bg-white rounded-[16px] shadow-xl sm:w-[560px]">
         <div className="flex items-center justify-between p-5 border-b border-black/[0.08]">
           <h2 className="text-[18px] font-bold text-[#0f172a]">Edit Course</h2>
           <button onClick={onClose} className="text-[#94a3b8] hover:text-[#0f172a]"><X className="h-5 w-5" /></button>
@@ -935,7 +935,7 @@ function EditCourseModal({ course, onClose, onSave }) {
                 : <input type={type} name={name} value={form[name]} onChange={handleChange} className="w-full rounded-[8px] border border-black/[0.08] px-3 py-2 text-[13px] focus:outline-none focus:ring-2 focus:ring-[#5b3df6]" />}
             </div>
           ))}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {[['category', 'Category', ['Science', 'Programming', 'Language', 'Mathematics', 'Arts']], ['level', 'Level', ['Beginner', 'Intermediate', 'Advanced']]].map(([name, label, opts]) => (
               <div key={name}>
                 <label className="block text-[13px] font-semibold text-[#0f172a] mb-1">{label}</label>
@@ -1016,10 +1016,10 @@ export default function InstructorCourseManagement() {
 
   return (
     <div className="min-h-full bg-[#f6f8fa]">
-      <div className="space-y-4 p-5">
+      <div className="space-y-4 p-4 sm:p-5">
         {/* Hero */}
         <section className="rounded-[12px] border border-black/[0.08] bg-gradient-to-br from-white to-[#e8f5ff] p-6">
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col items-start justify-between gap-4 lg:flex-row">
             <div>
               <div className="inline-flex items-center gap-2 rounded-[12px] bg-[#ffd966] px-3 py-1.5 mb-4">
                 <BookOpen className="h-4 w-4 text-[#4b2e00]" />
@@ -1029,14 +1029,14 @@ export default function InstructorCourseManagement() {
               <p className="mt-2 max-w-[560px] text-[13px] text-[#94a3b8]">
                 Create, manage, and publish your courses. Track student enrollment, performance, and course engagement all in one place.
               </p>
-              <div className="mt-4 flex gap-3">
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                 <button
                   onClick={() => setShowCreatePage(true)}
-                  className="inline-flex items-center gap-2 bg-[#5b3df6] px-4 py-2 rounded-[8px] text-[13px] font-semibold text-white hover:bg-[#4a2ed8] transition-colors"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] bg-[#5b3df6] px-4 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#4a2ed8] sm:w-auto"
                 >
                   <Plus className="h-4 w-4" /> Create New Course
                 </button>
-                <button className="inline-flex items-center gap-2 border border-black/[0.08] bg-white px-4 py-2 rounded-[8px] text-[13px] font-semibold text-[#0f172a] hover:bg-gray-50">
+                <button className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-black/[0.08] bg-white px-4 py-2 text-[13px] font-semibold text-[#0f172a] hover:bg-gray-50 sm:w-auto">
                   <Upload className="h-4 w-4" /> Bulk Upload
                 </button>
               </div>
@@ -1051,7 +1051,7 @@ export default function InstructorCourseManagement() {
         </section>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <StatCard label="Total Courses" value={stats.total} icon={BookOpen} />
           <StatCard label="Published" value={stats.published} icon={CheckCircle} />
           <StatCard label="In Draft" value={stats.draft} icon={Edit} />
@@ -1061,7 +1061,7 @@ export default function InstructorCourseManagement() {
         {/* Search */}
         <div className="bg-white border border-black/[0.08] rounded-lg p-4">
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex-1 min-w-[240px] relative">
+            <div className="relative flex-1 min-w-0 sm:min-w-[240px]">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#94a3b8]" />
               <input type="text" placeholder="Search courses..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-9 pr-3 py-2 border border-black/[0.08] rounded-[8px] text-[13px] focus:outline-none focus:ring-2 focus:ring-[#5b3df6]" />

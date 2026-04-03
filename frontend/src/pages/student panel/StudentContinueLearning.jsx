@@ -402,13 +402,13 @@ export default function StudentContinueLearning() {
   return (
     <div className="min-h-full bg-[#F7FAFD]">
       {/* Main layout */}
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[1fr_320px]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-[1fr_320px]">
           {/* Left: video + lesson info */}
           <div className="flex flex-col gap-[24px]">
             {/* Video player */}
             <div className="relative bg-black select-none rounded-[8px] overflow-hidden border border-black/[0.08]">
-              <img src={HERO} alt="lesson" className="w-full h-[450px] object-cover opacity-80" />
+              <img src={HERO} alt="lesson" className="h-[240px] w-full object-cover opacity-80 sm:h-[320px] lg:h-[450px]" />
               <div className="absolute inset-0 flex flex-col justify-between p-[24px]">
                 <div className="flex-1 flex items-center justify-center">
                   <button className="h-[56px] w-[56px] rounded-full bg-white/25 backdrop-blur-sm flex items-center justify-center border border-white/40 hover:bg-white/35 transition">
@@ -447,7 +447,7 @@ export default function StudentContinueLearning() {
                 <div className="flex items-center gap-[6px]"><MessageSquare className="h-[14px] w-[14px]" /> 124 Discussions</div>
               </div>
               {/* Tabs */}
-              <div className="mt-[16px] flex gap-[24px] border-b border-black/[0.08]">
+              <div className="mt-[16px] flex gap-[24px] overflow-x-auto border-b border-black/[0.08]">
                 {tabs.map(t => (
                   <button
                     key={t}

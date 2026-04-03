@@ -64,7 +64,7 @@ export default function AdminELibrary() {
 					</div>
 					<button
 						onClick={() => setShowUploadModal(true)}
-						className="inline-flex h-[40px] items-center gap-2 rounded-[6px] bg-[#5b3df6] px-[16px] text-[14px] font-medium text-white hover:bg-[#4c2dd9]"
+						className="inline-flex h-[40px] w-full items-center justify-center gap-2 rounded-[6px] bg-[#5b3df6] px-[16px] text-[14px] font-medium text-white hover:bg-[#4c2dd9] sm:w-auto"
 					>
 						<PlusCircle className="h-[18px] w-[18px]" />
 						Upload library file
@@ -154,7 +154,7 @@ export default function AdminELibrary() {
 							</label>
 						</div>
 
-						<div className="flex gap-3 border-t border-black/[0.08] p-5">
+						<div className="flex flex-col gap-3 border-t border-black/[0.08] p-5 sm:flex-row">
 							<button
 								onClick={() => setShowUploadModal(false)}
 								className="h-10 flex-1 rounded-[6px] border border-black/[0.08] text-[13px] font-medium text-[#64748b] hover:bg-[#f8fafc]"
