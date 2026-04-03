@@ -24,9 +24,9 @@ export default function AdminLiveClasses() {
 
   if (activeView === 'create') {
     return (
-      <div className="min-h-full bg-[#f6f8fa] p-5">
+      <div className="min-h-full bg-[#f6f8fa] p-4 sm:p-5">
         <div className="mx-auto max-w-[1180px] rounded-[10px] border border-black/[0.08] bg-white p-5">
-          <div className="mb-4 flex items-center justify-between">
+          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <button
               onClick={() => setActiveView('list')}
               className="inline-flex items-center gap-2 text-[13px] font-medium text-[#5b3df6]"
@@ -34,7 +34,7 @@ export default function AdminLiveClasses() {
               <ArrowLeft className="h-4 w-4" />
               Back to Live Classes
             </button>
-            <div className="flex gap-2">
+            <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
               <button
                 onClick={() => setActiveView('list')}
                 className="h-9 rounded-[7px] border border-black/[0.08] bg-white px-3 text-[12px] font-semibold text-[#334155]"
@@ -46,12 +46,12 @@ export default function AdminLiveClasses() {
           </div>
 
           <p className="text-[12px] text-[#94a3b8]">Live Classes / Create Zoom Meeting</p>
-          <h2 className="mt-1 text-[32px] font-bold text-[#0f172a]">Create Zoom Meeting</h2>
+          <h2 className="mt-1 text-[26px] font-bold text-[#0f172a] sm:text-[32px]">Create Zoom Meeting</h2>
 
-          <div className="mt-4 grid grid-cols-[1.5fr_1fr] gap-4">
+          <div className="mt-4 grid grid-cols-1 gap-4 xl:grid-cols-[1.5fr_1fr]">
             <section className="rounded-[8px] border border-black/[0.08] bg-white p-4">
               <h3 className="text-[18px] font-bold text-[#111827]">Batch Configuration</h3>
-              <div className="mt-3 grid grid-cols-2 gap-3">
+              <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-[12px] font-medium text-[#334155]">Batch name</label>
                   <input className="h-10 w-full rounded-[7px] border border-black/[0.08] px-3 text-[13px]" placeholder="e.g. Batch A - Morning" />
@@ -131,13 +131,13 @@ export default function AdminLiveClasses() {
 
   return (
     <div className="min-h-full bg-[#f6f8fa]">
-      <div className="space-y-4 p-5">
+      <div className="space-y-4 p-4 sm:p-5">
         <section className="rounded-[8px] border border-black/[0.08] bg-[#eaf2fb] p-4">
           <div>
             <span className="inline-flex rounded-[12px] bg-[#ffd966] px-[10px] py-[5px] text-[11px] font-medium text-[#4b2e00]">Today’s live teaching operations</span>
             <h2 className="mt-3 max-w-[700px] text-[28px] font-bold leading-tight text-[#0f172a]">Schedule, track, and manage every live session from one class operations workspace.</h2>
             <p className="mt-2 max-w-[700px] text-[14px] text-[#94a3b8]">Monitor upcoming Zoom and Meet sessions, manage teachers, review attendance, and quickly resolve link or timing issues before class starts.</p>
-            <div className="mt-4 flex gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveView('create')}
                 className="inline-flex h-9 items-center gap-1 rounded-[7px] bg-[#5b3df6] px-3 text-[12px] font-semibold text-white"
@@ -147,21 +147,21 @@ export default function AdminLiveClasses() {
           </div>
         </section>
 
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <div className="rounded-[8px] border border-black/[0.08] bg-white p-[16px]"><p className="text-[11px] text-[#94a3b8]">Classes today</p><p className="mt-2 text-[34px] font-bold">12</p><span className="mt-2 inline-flex rounded-[12px] bg-[#2dd4bf] px-2 py-1 text-[10px] font-medium text-[#023b33]">+3 starting in 1 hour</span></div>
           <div className="rounded-[8px] border border-black/[0.08] bg-white p-[16px]"><p className="text-[11px] text-[#94a3b8]">Attendance rate</p><p className="mt-2 text-[34px] font-bold">89%</p><span className="mt-2 inline-flex rounded-[12px] bg-[#f0f4f8] px-2 py-1 text-[10px] font-medium text-[#64748b]">Up +5% from last week</span></div>
           <div className="rounded-[8px] border border-black/[0.08] bg-white p-[16px]"><p className="text-[11px] text-[#94a3b8]">Links pending</p><p className="mt-2 text-[34px] font-bold">2</p><span className="mt-2 inline-flex rounded-[12px] bg-[#ffd966] px-2 py-1 text-[10px] font-medium text-[#4b2e00]">Needs follow-up</span></div>
           <div className="rounded-[8px] border border-black/[0.08] bg-white p-[16px]"><p className="text-[11px] text-[#94a3b8]">Faculty live now</p><p className="mt-2 text-[34px] font-bold">5</p><span className="mt-2 inline-flex rounded-[12px] bg-[#2dd4bf] px-2 py-1 text-[10px] font-medium text-[#023b33]">All sessions stable</span></div>
         </div>
 
-        <div className="grid grid-cols-[1.7fr_1fr] gap-3">
+        <div className="grid grid-cols-1 gap-3 xl:grid-cols-[1.7fr_1fr]">
           <section className="rounded-[8px] border border-black/[0.08] bg-white p-4">
-            <div className="mb-3 flex items-start justify-between">
+              <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <h3 className="text-[22px] font-bold text-[#111827]">Upcoming sessions</h3>
                 <p className="text-[12px] text-[#94a3b8]">Track links, status, instructor assignment, and upcoming timings.</p>
               </div>
-              <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                 <button className="h-8 rounded-[7px] border border-black/[0.08] bg-[#f1f5f9] px-3 text-[11px] font-medium">Bulk reminders</button>
                 <button
                   onClick={() => setIsAddSessionOpen(true)}
@@ -173,7 +173,7 @@ export default function AdminLiveClasses() {
             </div>
             <div className="space-y-2">
               {sessions.map(([title, meta, status, cls, action]) => (
-                <div key={title} className="flex items-center justify-between rounded-[8px] border border-black/[0.06] p-3">
+                <div key={title} className="flex flex-col gap-3 rounded-[8px] border border-black/[0.06] p-3 sm:flex-row sm:items-center sm:justify-between">
                   <div className="flex items-start gap-2">
                     <Video className="mt-0.5 h-4 w-4 text-[#5b3df6]" />
                     <div>
@@ -181,7 +181,7 @@ export default function AdminLiveClasses() {
                       <p className="text-[10px] text-[#9aa9c0]">{meta}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <span className={`rounded-[12px] px-2 py-1 text-[10px] font-medium ${cls}`}>{status}</span>
                     <button className="rounded-[7px] border border-black/[0.08] bg-white px-2 py-1 text-[10px] font-semibold">{action}</button>
                   </div>
@@ -193,7 +193,7 @@ export default function AdminLiveClasses() {
           <section className="rounded-[8px] border border-black/[0.08] bg-white p-4">
             <h3 className="text-[22px] font-bold text-[#111827]">This week</h3>
             <p className="text-[12px] text-[#94a3b8]">Quick view of the next teaching schedule.</p>
-            <div className="mt-3 grid grid-cols-5 gap-2">
+            <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
               {[
                 ['12', 'Mon', 'Math 5PM'],
                 ['13', 'Tue', 'STEM 4PM'],
@@ -217,23 +217,23 @@ export default function AdminLiveClasses() {
       {isAddSessionOpen ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/35 p-4">
           <div className="w-full max-w-[740px] rounded-[10px] border border-[#0ea5e9] bg-white shadow-2xl">
-            <div className="flex items-start justify-between border-b border-[#7dd3fc] px-6 py-5">
+            <div className="flex items-start justify-between gap-3 border-b border-[#7dd3fc] px-4 py-4 sm:px-6 sm:py-5">
               <div>
-                <h3 className="text-[36px] font-bold leading-none text-[#111827]">Add session</h3>
-                <p className="mt-1 text-[24px] text-[#6b7280]">Schedule a new live class for an existing batch</p>
+                <h3 className="text-[28px] font-bold leading-none text-[#111827] sm:text-[36px]">Add session</h3>
+                <p className="mt-1 text-[16px] text-[#6b7280] sm:text-[24px]">Schedule a new live class for an existing batch</p>
               </div>
               <button onClick={() => setIsAddSessionOpen(false)} className="text-[#94a3b8] hover:text-[#64748b]">
                 <X className="h-5 w-5" />
               </button>
             </div>
 
-            <div className="space-y-4 px-6 py-5">
+            <div className="space-y-4 px-4 py-4 sm:px-6 sm:py-5">
               <div>
                 <label className="mb-1 block text-[14px] font-semibold text-[#374151]">Session title *</label>
                 <input className="h-10 w-full rounded-[8px] border border-black/[0.08] px-4 text-[14px]" defaultValue="Math Mastery Live - Chapter 4" />
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-[14px] font-semibold text-[#374151]">Course / Batch *</label>
                   <div className="relative">
@@ -254,7 +254,7 @@ export default function AdminLiveClasses() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <div>
                   <label className="mb-1 block text-[14px] font-semibold text-[#374151]">Date *</label>
                   <div className="relative">
@@ -280,7 +280,7 @@ export default function AdminLiveClasses() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-[14px] font-semibold text-[#374151]">Platform *</label>
                   <div className="relative">

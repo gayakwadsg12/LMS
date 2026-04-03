@@ -96,19 +96,19 @@ function Pill({ children, variant }) {
 export default function StudentBrowseCourse() {
   return (
     <div className="min-h-full bg-[#F7FAFD]">
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
         {/* Hero Section */}
-        <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
-          <div className="flex flex-col gap-[11px] items-start relative shrink-0">
+        <section className="w-full shrink-0 rounded-[8px] border border-black/[0.08] border-solid bg-gradient-to-br from-white to-[#e8f5ff] px-4 pb-5 pt-5 sm:px-6 sm:pb-6 sm:pt-6">
+          <div className="flex flex-col gap-[11px] items-start">
             <div className="bg-[#ffd966] flex items-center px-[10px] py-[6.5px] rounded-[12px] shrink-0">
-              <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#4b2e00] text-[12px]">
+              <div className="text-[12px] font-medium text-[#4b2e00]">
                 Create-ready course discovery
               </div>
             </div>
-            <div className="flex flex-col font-bold h-[31.59px] justify-center leading-[0] text-[#0f172a] text-[28px]">
+            <div className="text-[22px] font-bold leading-tight text-[#0f172a] sm:text-[26px] lg:text-[28px]">
               Browse courses built to help you level up faster.
             </div>
-            <div className="flex flex-col font-normal h-[17px] justify-center leading-[0] text-[#94a3b8] text-[14px]">
+            <div className="text-[14px] text-[#94a3b8] leading-relaxed">
               Explore guided paths across UI/UX, product design, frontend development, and career growth.
               Personalized picks, top-rated cohorts, and new releases are surfaced in one clean catalog.
             </div>
@@ -139,7 +139,7 @@ export default function StudentBrowseCourse() {
             <p className="text-[13px] text-[#94a3b8] mt-[4px]">Use filters to narrow by topic, level, duration, or certificate track.</p>
           </div>
           <div className="flex flex-wrap items-center gap-[12px] w-full">
-            <div className="flex-1 min-w-[280px] bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] px-[15px] py-[0.25px] relative rounded-[6px]">
+            <div className="flex-1 min-w-0 sm:min-w-[280px] bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] px-[15px] py-[0.25px] relative rounded-[6px]">
               <Search className="h-[18px] w-[18px] text-[#94a3b8]" />
               <input
                 className="min-w-0 flex-1 bg-transparent text-[14px] text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none"
@@ -167,7 +167,7 @@ export default function StudentBrowseCourse() {
 
         {/* Recommended Section */}
         <div className="flex flex-col gap-[16px]">
-          <div className="flex items-end justify-between">
+          <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-end">
             <div>
               <h3 className="font-bold text-[24px] text-[#0f172a]">Recommended for you</h3>
               <p className="text-[13px] text-[#94a3b8] mt-[4px]">Based on your recent progress in UI/UX Masterclass and accessibility topics.</p>
@@ -175,7 +175,7 @@ export default function StudentBrowseCourse() {
             <p className="text-[13px] font-medium text-[#94a3b8]">Showing 6 curated matches</p>
           </div>
 
-          <div className="grid grid-cols-3 gap-[24px] h-[1115px] w-[1200px]">
+          <div className="grid grid-cols-1 gap-[24px] sm:grid-cols-2 xl:grid-cols-3">
             {CARDS.map((course) => (
               <article key={course.title} className="bg-white border border-black/[0.08] border-solid rounded-[8px] overflow-hidden flex flex-col">
                 <img src={course.image} alt="" className="h-[200px] w-full object-cover" />
@@ -187,9 +187,9 @@ export default function StudentBrowseCourse() {
                       </span>
                     ))}
                   </div>
-                  <h4 className="font-bold text-[20px] text-[#0f172a] leading-tight">{course.title}</h4>
+                  <h4 className="font-bold text-[18px] text-[#0f172a] leading-tight">{course.title}</h4>
                   <p className="text-[13px] text-[#94a3b8] line-clamp-2">{course.desc}</p>
-                  <div className="grid grid-cols-3 gap-[8px]">
+                  <div className="grid grid-cols-1 gap-[8px] sm:grid-cols-3">
                     {course.meta.map((m) => (
                       <div key={m} className="bg-[#f8fafc] rounded-[6px] p-[8px] text-[11px] font-medium text-[#475569] text-center">
                         {m}
@@ -209,7 +209,7 @@ export default function StudentBrowseCourse() {
                       {course.rating}
                     </div>
                   </div>
-                  <div className="flex items-center justify-between border-t border-black/[0.08]">
+                  <div className="flex flex-col gap-3 border-t border-black/[0.08] pt-2 sm:flex-row sm:items-center sm:justify-between sm:pt-0">
                     <div>
                       <p className="text-[28px] pt-2 font-bold text-[#0f172a] leading-none">{course.price}</p>
                       <p className="text-[11px] text-[#94a3b8] mt-[4px]">{course.note}</p>

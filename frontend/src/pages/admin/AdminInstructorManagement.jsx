@@ -114,10 +114,10 @@ function ViewInstructorModal({ instructor, onClose }) {
   const qualifications = ['STEM Core', 'Scratch Programming', 'Robotics Level 1 & 2', 'Python Basics']
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-y-auto">
-      <div className="relative w-full max-w-[1200px] my-8 mx-4 bg-white rounded-[16px] shadow-xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-y-auto p-3 sm:p-4">
+      <div className="relative w-full max-w-[1200px] my-4 sm:my-8 mx-0 sm:mx-4 bg-white rounded-[16px] shadow-xl overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-black/[0.08] px-6 py-4 bg-white">
+        <div className="flex items-center justify-between border-b border-black/[0.08] bg-white px-4 py-4 sm:px-6">
           <div className="flex items-center gap-3">
             <Avatar src={instructor.avatar} alt={instructor.name} className="h-10 w-10 rounded-full" />
             <div>
@@ -130,9 +130,9 @@ function ViewInstructorModal({ instructor, onClose }) {
           </button>
         </div>
 
-        <div className="p-6 max-h-[calc(100vh-120px)] overflow-y-auto">
+        <div className="max-h-[calc(100vh-120px)] overflow-y-auto p-4 sm:p-6">
           {/* Stats Grid */}
-          <div className="grid grid-cols-4 gap-4 mb-6">
+          <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {stats.map((stat, idx) => (
               <div key={idx} className="border border-black/[0.08] rounded-[12px] p-4">
                 <div className="flex items-center justify-between mb-2">
@@ -145,9 +145,9 @@ function ViewInstructorModal({ instructor, onClose }) {
             ))}
           </div>
 
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
             {/* Left Column - Upcoming Classes & Reviews */}
-            <div className="col-span-2 space-y-6">
+            <div className="space-y-6 xl:col-span-2">
               {/* Upcoming Classes */}
               <div className="border border-black/[0.08] rounded-[12px] p-5">
                 <h3 className="text-[16px] font-semibold text-[#0f172a] mb-4">Upcoming Classes</h3>
@@ -160,7 +160,7 @@ function ViewInstructorModal({ instructor, onClose }) {
                       <div className="flex-1">
                         <p className="font-semibold text-[14px] text-[#0f172a]">{cls.title}</p>
                         <p className="text-[12px] text-[#94a3b8] mt-1">{cls.time}</p>
-                        <div className="flex gap-3 mt-1 text-[11px] text-[#64748b]">
+                        <div className="mt-1 flex flex-wrap gap-3 text-[11px] text-[#64748b]">
                           <span>{cls.students}</span>
                           <span>{cls.schedule}</span>
                         </div>
@@ -241,7 +241,7 @@ function ViewInstructorModal({ instructor, onClose }) {
         </div>
 
         {/* Footer Actions */}
-        <div className="border-t border-black/[0.08] px-6 py-4 bg-[#fafcff] flex justify-end gap-3">
+        <div className="border-t border-black/[0.08] bg-[#fafcff] px-4 py-4 flex flex-col gap-3 sm:px-6 sm:flex-row sm:justify-end">
           <button onClick={onClose} className="px-4 py-2 border border-black/[0.08] rounded-[6px] text-[13px] text-[#64748b] hover:bg-gray-50">
             Close
           </button>
@@ -621,9 +621,9 @@ export default function AdminInstructorManagement() {
   return (
     <>
     <div className="min-h-full bg-[#F7FAFD]">
-      <div className="flex flex-col gap-6 p-7">
+      <div className="flex flex-col gap-6 p-4 sm:p-6 lg:p-7">
         {/* Hero — matches Student Management / Figma instructor frame pattern */}
-        <section className="flex items-start justify-between gap-8 rounded-[10px] border border-black/[0.08] bg-gradient-to-br from-white to-[#e8f5ff] p-7">
+        <section className="flex flex-col items-start justify-between gap-6 rounded-[10px] border border-black/[0.08] bg-gradient-to-br from-white to-[#e8f5ff] p-5 sm:p-7 lg:flex-row lg:gap-8">
           <div className="min-w-0 flex-1">
             <span className="mb-4 inline-flex items-center rounded-[10px] bg-[#f0f4f8] px-3 py-1.5 text-[11px] font-medium text-[#64748b]">
               Instructor workspace
@@ -664,7 +664,7 @@ export default function AdminInstructorManagement() {
               </button>
             </div>
           </div>
-          <div className="flex min-w-[200px] flex-col gap-3">
+          <div className="flex w-full flex-col gap-3 sm:min-w-[200px] lg:w-auto">
             <div className="rounded-[8px] border border-black/[0.08] bg-white px-5 py-4">
               <p className="mb-1 text-[12px] text-[#94a3b8]">Pending onboarding</p>
               <p className="text-[28px] font-bold text-[#0f172a]">5</p>
@@ -753,7 +753,7 @@ export default function AdminInstructorManagement() {
               ))}
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <div className="flex h-9 min-w-[220px] items-center gap-2 rounded-[6px] border border-black/[0.08] bg-[#f8fafc] px-3">
+              <div className="flex h-9 w-full items-center gap-2 rounded-[6px] border border-black/[0.08] bg-[#f8fafc] px-3 sm:min-w-[220px]">
                 <Search className="h-4 w-4 shrink-0 text-[#94a3b8]" />
                 <input
                   value={directorySearch}
@@ -778,7 +778,7 @@ export default function AdminInstructorManagement() {
           </div>
 
           <div className="overflow-x-auto">
-          <div className="min-w-[720px]">
+          <div className="min-w-[640px] sm:min-w-[720px]">
           <div className="grid grid-cols-[1.6fr_1.4fr_1fr_0.9fr_1.1fr] gap-4 border-b border-black/[0.06] px-3 pb-2">
             {['Instructor', 'Course & focus', 'Load', 'Status', 'Actions'].map((h) => (
               <p key={h} className="text-[12px] font-medium text-[#94a3b8]">
@@ -868,7 +868,7 @@ export default function AdminInstructorManagement() {
             Prepare a new instructor record without leaving this page.
           </p>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
               <label className="text-[12px] font-medium text-[#0f172a] block mb-1">Instructor name</label>
               <input

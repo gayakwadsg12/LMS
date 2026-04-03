@@ -257,45 +257,45 @@ export default function StudentDashboard() {
 
   return (
     <div className="min-h-full bg-[#F7FAFD]">
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
         
         {/* Hero Section */}
-        <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
-          <div className="flex flex-col gap-[11px] items-start relative shrink-0">
+        <section className="w-full shrink-0 rounded-[8px] border border-black/[0.08] border-solid bg-gradient-to-br from-white to-[#e8f5ff] px-4 pb-5 pt-5 sm:px-6 sm:pb-6 sm:pt-6">
+          <div className="flex flex-col gap-[11px] items-start">
             <div className="bg-[#ffd966] flex items-center px-[10px] py-[6.5px] rounded-[12px] shrink-0">
-              <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#4b2e00] text-[12px]">
+              <div className="text-[12px] font-medium text-[#4b2e00]">
                 Student journey • Updated
               </div>
             </div>
-            <div className="max-w-[850px] text-[35px] font-bold leading-[1.2] text-[#0f172a]">
+            <div className="max-w-[850px] text-[24px] font-bold leading-[1.2] text-[#0f172a] sm:text-[30px] lg:text-[35px]">
               Continue courses, access the new e-library, join live classes, and complete quizzes from one place.
             </div>
             <div className="max-w-[750px] text-[13.9px] text-[#94a3b8]">
               A learner dashboard for course discovery, class schedule, progress tracking, saved courses, e-library resources, live class reminders, and next-step digital study pathways with time-based goals.
             </div>
           </div>
-          <div className="mt-4 flex items-center gap-[12px]">
-            <button className="bg-[#5b3df6] flex items-center gap-[8px] h-[40px] justify-center px-[16px] rounded-[6px] shrink-0">
-              <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-white text-[14px]">Continue Learning</div>
+          <div className="mt-4 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+            <button className="flex h-[40px] w-full items-center justify-center gap-[8px] rounded-[6px] bg-[#5b3df6] px-[16px] sm:w-auto">
+              <div className="text-[14px] font-medium text-white">Continue Learning</div>
             </button>
-            <button className="border border-black/[0.08] flex items-center gap-[8px] h-[40px] justify-center px-[17px] py-[0.25px] rounded-[6px] shrink-0 bg-white">
-              <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">Open E-Library</div>
+            <button className="flex h-[40px] w-full items-center justify-center gap-[8px] rounded-[6px] border border-black/[0.08] bg-white px-[17px] py-[0.25px] sm:w-auto">
+              <div className="text-[14px] font-medium text-[#0f172a]">Open E-Library</div>
             </button>
           </div>
         </section>
 
         {/* Stats Row */}
-        <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(5,minmax(0,1fr))]">
+        <div className="grid grid-cols-1 gap-x-[16px] gap-y-[16px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {stats.map(([title, value, meta]) => (
             <div key={title} className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[12px] items-start p-[16px] rounded-[8px]">
-              <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#94a3b8] text-[13px]">
+              <div className="text-[13px] font-medium text-[#94a3b8]">
                 {title}
               </div>
-              <div className="flex flex-col font-bold h-[36px] justify-center leading-[0] text-[#0f172a] text-[32px] tracking-[-0.6px]">
+              <div className="text-[32px] font-bold tracking-[-0.6px] text-[#0f172a] leading-none">
                 {value}
               </div>
               <div className="bg-[#2dd4bf] h-[28px] rounded-[12px] relative flex items-center px-[10px]">
-                <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#023b33] text-[11px]">
+                <div className="text-[11px] font-medium text-[#023b33]">
                   {meta}
                 </div>
               </div>
@@ -304,12 +304,12 @@ export default function StudentDashboard() {
         </div>
 
         {/* Content Grid */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[1.45fr_1fr]">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-[1.45fr_1fr]">
           {/* Left Column */}
           <div className="flex flex-col gap-[24px]">
             {/* Course browsing */}
             <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
-              <div className="flex items-center justify-between w-full">
+              <div className="flex flex-col items-start justify-between gap-3 w-full sm:flex-row sm:items-center">
                 <div>
                   <h3 className="font-bold text-[18px] text-[#0f172a]">Course browsing</h3>
                   <p className="text-[13px] text-[#94a3b8] mt-[4px]">Discover and resume your learning journey</p>
@@ -330,7 +330,7 @@ export default function StudentDashboard() {
 
             {/* E-Library */}
             <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
-              <div className="flex items-center justify-between w-full">
+              <div className="flex flex-col items-start justify-between gap-3 w-full sm:flex-row sm:items-center">
                 <div>
                   <h3 className="font-bold text-[18px] text-[#0f172a]">E-Library</h3>
                   <p className="text-[13px] text-[#94a3b8] mt-[4px]">Access digital resources and learning materials</p>

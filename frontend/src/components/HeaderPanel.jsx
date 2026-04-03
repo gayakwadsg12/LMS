@@ -1,5 +1,5 @@
 import React from 'react'
-import { Search, Bell } from 'lucide-react'
+import { Search, Bell, Menu } from 'lucide-react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const AVATAR = 'https://www.figma.com/api/mcp/asset/cac9530e-475b-4f0c-b716-69a17ab9bc2f'
@@ -64,7 +64,7 @@ const getPageTitle = (pathname) => {
   return 'Dashboard'
 }
 
-export default function HeaderPanel() {
+export default function HeaderPanel({ onMenuToggle }) {
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -106,24 +106,40 @@ export default function HeaderPanel() {
   const pageTitle = getPageTitle(location.pathname)
 
   let profilePath = '/profile'
+  let notificationPath = ''
   if (isSuperAdmin) profilePath = '/superadmin/profile'
-  else if (isAdmin) profilePath = '/admin/profile'
-  else if (isInstructor) profilePath = '/instructor/profile'
-  else if (isStudent) profilePath = '/student-panel/profile'
+  else if (isAdmin) {
+    profilePath = '/admin/profile'
+    notificationPath = '/admin/notification'
+  } else if (isInstructor) {
+    profilePath = '/instructor/profile'
+  } else if (isStudent) {
+    profilePath = '/student-panel/profile'
+  }
 
   return (
-    <header className="flex h-[76px] items-center justify-between border-b border-black/[0.08] bg-white px-[28px]">
-      <div className="relative shrink-0">
-        <div className="flex flex-col font-medium h-[16px] justify-center leading-[0] text-[#94a3b8] text-[13px]">
+    <header className="flex min-h-[72px] items-center justify-between border-b border-black/[0.08] bg-white px-4 py-3 sm:px-6 lg:px-7">
+      <div className="flex min-w-0 items-center gap-3">
+        <button
+          type="button"
+          onClick={onMenuToggle}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/[0.08] bg-white text-[#0f172a] lg:hidden"
+          aria-label="Open sidebar"
+        >
+          <Menu className="h-5 w-5" />
+        </button>
+        <div className="relative min-w-0 shrink">
+        <div className="flex h-[16px] flex-col justify-center text-[11px] font-medium leading-[0] text-[#94a3b8] sm:text-[13px]">
           {panelLabel}
         </div>
-        <div className="flex flex-col font-bold h-[29px] justify-center leading-[0] text-[#0f172a] text-[24px]">
+        <div className="line-clamp-1 flex h-[29px] flex-col justify-center text-[18px] font-bold leading-[0] text-[#0f172a] sm:text-[22px] lg:text-[24px]">
           {pageTitle}
+        </div>
         </div>
       </div>
 
-      <div className="flex items-center gap-[12px]">
-        <div className="bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] min-w-[280px] px-[15px] py-[0.25px] relative rounded-[6px]">
+      <div className="flex items-center gap-2 sm:gap-3">
+        <div className="hidden h-[40px] min-w-0 items-center gap-[10px] rounded-[6px] border border-black/[0.08] bg-white px-3 py-[0.25px] sm:flex sm:w-[210px] lg:w-[280px]">
           <Search className="h-[18px] w-[18px] text-[#94a3b8]" />
           <input
             className="min-w-0 flex-1 bg-transparent text-[14px] text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none"
@@ -132,18 +148,19 @@ export default function HeaderPanel() {
         </div>
 
         <button
-          onClick={() => navigate(isAdmin ? '/admin/notification' : '/notification')}
-          className="bg-white border border-black/[0.08] flex items-center gap-[8px] h-[40px] justify-center px-[10px] py-[0.25px] rounded-[6px] shrink-0"
+          onClick={() => notificationPath && navigate(notificationPath)}
+          className="flex h-10 w-10 shrink-0 items-center justify-center gap-[8px] rounded-[6px] border border-black/[0.08] bg-white px-[10px] py-[0.25px]"
+          disabled={!notificationPath}
         >
           <Bell className="h-[18px] w-[18px] text-[#0f172a]" />
         </button>
 
         <button
           onClick={() => navigate(profilePath)}
-          className="bg-white border border-black/[0.08] flex items-center gap-[12px] px-[11px] py-[9px] rounded-[6px] hover:bg-[#f8fafc] transition-colors"
+          className="flex items-center gap-2 rounded-[6px] border border-black/[0.08] bg-white px-2.5 py-2 transition-colors hover:bg-[#f8fafc] sm:gap-3 sm:px-[11px] sm:py-[9px]"
         >
           <Avatar src={AVATAR} alt={userName} />
-          <div className="flex flex-col gap-[0.01px] items-start">
+          <div className="hidden items-start gap-[0.01px] sm:flex sm:flex-col">
             <div className="flex flex-col font-semibold h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">
               {userName}
             </div>

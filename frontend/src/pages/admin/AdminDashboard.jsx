@@ -159,7 +159,7 @@ export default function AdminDashboard() {
     <div className="min-h-full bg-[#F7FAFD]">
       {/* Removed Header component */}
       
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
         {/* Hero */}
         <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
           <div className="flex flex-col gap-[11px] items-start relative shrink-0">
@@ -169,16 +169,16 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            <div className="flex flex-col font-bold h-[31.59px] justify-center w-[1200px] text-[#0f172a] text-[28px]">
+            <div className="text-[24px] font-bold text-[#0f172a] sm:text-[28px]">
               Run courses, track learners, and grow revenue from one institute workspace.
             </div>
 
-            <div className="flex flex-col font-normal h-[17px] justify-center leading-[0] text-[#94a3b8] text-[14px]">
+            <div className="text-[14px] text-[#94a3b8]">
               Manage your courses, instructors, students, live classes, and payments with a clear operational overview.
             </div>
           </div>
 
-          <div className="mt-4 flex items-center gap-[12px]">
+          <div className="mt-4 flex flex-wrap items-center gap-[12px]">
             <div className="bg-[#5b3df6] flex items-center gap-[8px] h-[40px] justify-center px-[16px] rounded-[6px] shrink-0">
               <Plus className="h-[18px] w-[18px] text-white" />
               <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-white text-[14px]">
@@ -197,7 +197,7 @@ export default function AdminDashboard() {
         {/* ... all the other sections (stats, courses, etc.) ... */}
         
         {/* Stats row */}
-        <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(4,minmax(0,1fr))]">
+        <div className="grid grid-cols-1 gap-x-[16px] gap-y-[16px] sm:grid-cols-2 xl:grid-cols-[repeat(4,minmax(0,1fr))]">
           <div className="bg-white border border-black/[0.08] border-solid col-1 flex flex-col gap-[16px] items-start p-[19px] rounded-[8px]">
             <div className="flex items-center justify-between w-full">
               <div className="flex flex-col items-start w-[98.3px]">
@@ -285,7 +285,7 @@ export default function AdminDashboard() {
 
         {/* Subscription revenue split */}
         <section className="bg-white border border-black/[0.08] border-solid rounded-[8px] p-[21px]">
-          <div className="flex items-center justify-between w-full">
+          <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center w-full">
             <div>
               <div className="font-bold text-[18px] text-[#0f172a]">Subscription revenue split</div>
               <div className="text-[13px] text-[#94a3b8] mt-[4px]">
@@ -297,7 +297,7 @@ export default function AdminDashboard() {
             </div>
           </div>
 
-          <div className="mt-4 grid grid-cols-2 gap-[16px]">
+          <div className="mt-4 grid grid-cols-1 gap-[16px] sm:grid-cols-2">
             <div className="bg-[#f8fafc] rounded-[6px] p-[14px] border border-black/[0.06]">
               <div className="text-[13px] font-medium text-[#94a3b8]">Admin share</div>
               <div className="text-[24px] font-bold text-[#0f172a] mt-[6px]">{adminSharePercent}% (₹{adminShareAmount})</div>
@@ -311,16 +311,16 @@ export default function AdminDashboard() {
 
         {/* Keep all other sections exactly as they were */}
         {/* Top 2 cards: Course management + Live classes */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[minmax(0,1.80fr)_minmax(0,1.20fr)]">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-[minmax(0,1.80fr)_minmax(0,1.20fr)]">
           <div className="bg-white border border-black/[0.08] border-solid content-stretch flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
-            <div className="flex items-center justify-between w-full">
+            <div className="flex flex-col items-start justify-between gap-3 w-full lg:flex-row lg:items-center">
               <div className="flex flex-col gap-[4px] items-start w-[287.92px]">
                 <div className="font-bold text-[18px] text-[#0f172a]">Course management</div>
                 <div className="text-[13px] text-[#94a3b8]">
                   Build, review, publish, and price your programs
                 </div>
               </div>
-              <div className="flex items-center gap-[12px]">
+              <div className="flex w-full flex-col items-stretch gap-[12px] sm:w-auto sm:flex-row sm:items-center">
                 <div className="bg-[#e8f5ff] border border-black/[0.08] flex h-[40px] items-center justify-center px-[17px] rounded-[6px]">
                   <div className="text-[14px] font-medium text-[#0f172a]">Add Modules</div>
                 </div>
@@ -338,15 +338,15 @@ export default function AdminDashboard() {
                     idx === 0 ? '' : 'border-t border-black/[0.08]'
                   }`}
                 >
-                  <div className="flex items-center justify-between pb-[14px] pt-[15px]">
+                  <div className="flex flex-col justify-between gap-3 pb-[14px] pt-[15px] sm:flex-row sm:items-center">
                     <div className="flex gap-[12px] items-center">
                       <div className="bg-[#e8f5ff] flex items-center justify-center rounded-[6px] shrink-0 size-[42px]">
                         <BookOpen className="h-[18px] w-[18px] text-[#5b3df6]" />
                       </div>
-                      <div className="flex flex-col w-[202.78px]">
+                      <div className="flex flex-col min-w-0">
                         <div className="font-semibold text-[14px] text-[#0f172a]">{c.title}</div>
                         <div className="text-[13px] text-[#94a3b8] mt-[4px]">{c.meta}</div>
-                        <div className="flex gap-[8px] items-center pt-[8px]">
+                        <div className="flex flex-wrap gap-[8px] items-center pt-[8px]">
                           <StepPill label="Draft" variant="draft" />
                           <StepPill label="Review" variant="review" />
                           <StepPill label="Publish" variant="publish" />
@@ -385,8 +385,8 @@ export default function AdminDashboard() {
             <div className="flex flex-col w-full">
               {liveClasses.map((lc, idx) => (
                 <div key={lc.title} className={`${idx === 0 ? '' : 'border-t border-black/[0.08]'} pb-[14px] pt-[15px]`}>
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-col gap-[4px] w-[225px]">
+                  <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+                    <div className="flex flex-col gap-[4px] min-w-0">
                       <div className="font-semibold text-[14px] text-[#0f172a]">{lc.title}</div>
                       <div className="text-[13px] text-[#94a3b8]">{lc.meta}</div>
                     </div>
@@ -403,17 +403,17 @@ export default function AdminDashboard() {
         </div>
 
         {/* Middle row: Instructor management + Student management */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-2">
           {/* Instructor */}
           <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
-            <div className="flex items-center justify-between w-full">
+            <div className="flex flex-col items-start justify-between gap-3 w-full lg:flex-row lg:items-center">
               <div className="flex flex-col gap-[4px] w-[307.58px]">
                 <div className="font-bold text-[18px] text-[#0f172a]">Instructor management</div>
                 <div className="text-[13px] text-[#94a3b8]">
                   Add instructors and assign them to active courses
                 </div>
               </div>
-              <div className="flex items-center gap-[12px]">
+              <div className="flex w-full flex-col gap-[12px] sm:w-auto sm:flex-row sm:items-center">
                 <div className="bg-[#e8f5ff] border border-black/[0.08] flex h-[40px] items-center justify-center rounded-[6px] px-[17px]">
                   <div className="text-[14px] font-medium text-[#0f172a] text-center">Assign Courses</div>
                 </div>
@@ -425,10 +425,10 @@ export default function AdminDashboard() {
 
             <div className="w-full flex flex-col">
               {instructors.map((inst, idx) => (
-                <div key={inst.name} className={`${idx === 0 ? '' : 'border-t border-black/[0.08]'} flex items-center justify-between pb-[14px] pt-[15px]`}>
+                <div key={inst.name} className={`${idx === 0 ? '' : 'border-t border-black/[0.08]'} flex flex-col justify-between gap-3 pb-[14px] pt-[15px] sm:flex-row sm:items-center`}>
                   <div className="flex items-center gap-[12px]">
                     <Avatar src={inst.avatar} alt={inst.name} className="h-[42px] w-[42px]" />
-                    <div className="flex flex-col w-[211.09px]">
+                    <div className="flex flex-col min-w-0">
                       <div className="font-semibold text-[14px] text-[#0f172a]">{inst.name}</div>
                       <div className="text-[13px] text-[#94a3b8] mt-[4px]">{inst.meta}</div>
                     </div>
@@ -450,7 +450,7 @@ export default function AdminDashboard() {
 
           {/* Student */}
           <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
-            <div className="flex items-center justify-between w-full">
+            <div className="flex flex-col items-start justify-between gap-3 w-full sm:flex-row sm:items-center">
               <div className="flex flex-col gap-[4px] w-[287.98px]">
                 <div className="font-bold text-[18px] text-[#0f172a]">Student management</div>
                 <div className="text-[13px] text-[#94a3b8]">
@@ -464,10 +464,10 @@ export default function AdminDashboard() {
 
             <div className="w-full flex flex-col">
               {students.map((st, idx) => (
-                <div key={st.name} className={`${idx === 0 ? '' : 'border-t border-black/[0.08]'} flex items-center justify-between pb-[14px] pt-[15px]`}>
+                <div key={st.name} className={`${idx === 0 ? '' : 'border-t border-black/[0.08]'} flex flex-col justify-between gap-3 pb-[14px] pt-[15px] sm:flex-row sm:items-center`}>
                   <div className="flex items-center gap-[12px]">
                     <Avatar src={st.avatar} alt={st.name} className="h-[42px] w-[42px]" />
-                    <div className="flex flex-col w-[262.89px]">
+                    <div className="flex flex-col min-w-0">
                       <div className="font-semibold text-[14px] text-[#0f172a]">{st.name}</div>
                       <div className="text-[13px] text-[#94a3b8] mt-[4px]">{st.meta}</div>
                     </div>
@@ -488,12 +488,12 @@ export default function AdminDashboard() {
 
             {/* Bulk upload row */}
             <div className="border-t border-black/[0.08] w-full pt-[15px]">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
                 <div className="flex items-center gap-[12px]">
                   <div className="bg-[#e8f5ff] flex items-center justify-center overflow-clip rounded-[6px] shrink-0 size-[42px]">
                     <Upload className="h-[18px] w-[18px] text-[#5b3df6]" />
                   </div>
-                  <div className="flex flex-col w-[236px]">
+                  <div className="flex flex-col min-w-0">
                     <div className="font-semibold text-[14px] text-[#0f172a]">Bulk Upload (CSV)</div>
                     <div className="text-[13px] text-[#94a3b8] mt-[4px]">
                       148 student records queued for import
@@ -509,7 +509,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Bottom row: Payments & coupons + Analytics */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-2">
           <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[18px] items-start p-[21px] rounded-[8px]">
             <div className="flex flex-col gap-[4px] w-full">
               <div className="font-bold text-[18px] text-[#0f172a]">Payments &amp; coupons</div>
@@ -518,7 +518,7 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            <div className="flex items-center gap-[12px]">
+            <div className="flex w-full flex-col items-stretch gap-[12px] sm:flex-row sm:items-center">
               <div className="bg-[#e8f5ff] border border-black/[0.08] flex h-[40px] items-center justify-center rounded-[6px] px-[17px] flex-1">
                 <div className="text-[14px] font-medium text-[#0f172a] text-center">Create Coupon</div>
               </div>
@@ -527,7 +527,7 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-[12px] w-full">
+            <div className="grid w-full grid-cols-1 gap-[12px] sm:grid-cols-3">
               <div className="bg-[#e8f5ff] rounded-[6px] p-[14px]">
                 <div className="text-[14px] font-medium text-[#94a3b8]">Coupon use</div>
                 <div className="text-[22px] font-bold text-[#0f172a] mt-[6px]">482</div>

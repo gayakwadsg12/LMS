@@ -933,9 +933,9 @@ export default function StudentManagement() {
 
   return (
     <div className="min-h-screen bg-[#F7FAFD]">
-      <div className="flex flex-col gap-6 p-7">
+      <div className="flex flex-col gap-6 p-4 sm:p-6 lg:p-7">
         {/* Hero Section - matches instructor management style */}
-        <section className="flex items-start justify-between gap-8 rounded-[10px] border border-black/[0.08] bg-gradient-to-br from-white to-[#e8f5ff] p-7">
+        <section className="flex flex-col items-start justify-between gap-6 rounded-[10px] border border-black/[0.08] bg-gradient-to-br from-white to-[#e8f5ff] p-5 sm:p-7 lg:flex-row lg:gap-8">
           <div className="min-w-0 flex-1">
             <span className="mb-4 inline-flex items-center rounded-[10px] bg-[#f0f4f8] px-3 py-1.5 text-[11px] font-medium text-[#64748b]">
               Student workspace
@@ -961,7 +961,7 @@ export default function StudentManagement() {
               </button>
             </div>
           </div>
-          <div className="flex min-w-[200px] flex-col gap-3">
+          <div className="flex w-full flex-col gap-3 sm:min-w-[200px] lg:w-auto">
             <div className="rounded-[8px] border border-black/[0.08] bg-white px-5 py-4">
               <p className="mb-1 text-[12px] text-[#94a3b8]">Active Students</p>
               <p className="text-[28px] font-bold text-[#0f172a]">{students.filter(s => s.enrollment.status === 'active').length}</p>
@@ -1071,7 +1071,7 @@ export default function StudentManagement() {
               </button>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <div className="flex h-9 min-w-[220px] items-center gap-2 rounded-[6px] border border-black/[0.08] bg-[#f8fafc] px-3">
+              <div className="flex h-9 w-full items-center gap-2 rounded-[6px] border border-black/[0.08] bg-[#f8fafc] px-3 sm:min-w-[220px]">
                 <Search className="h-4 w-4 shrink-0 text-[#94a3b8]" />
                 <input
                   type="text"
@@ -1110,7 +1110,7 @@ export default function StudentManagement() {
 
           {/* Filter Panel */}
           {showFilters && (
-            <div className="mb-4 grid grid-cols-3 gap-4 rounded-[10px] border border-black/[0.08] bg-[#fafcff] p-4">
+            <div className="mb-4 grid grid-cols-1 gap-4 rounded-[10px] border border-black/[0.08] bg-[#fafcff] p-4 md:grid-cols-3">
               <div>
                 <label className="block text-[12px] font-medium text-[#334155] mb-1.5">Enrollment Status</label>
                 <select
@@ -1158,7 +1158,7 @@ export default function StudentManagement() {
 
           {/* Student Table Header */}
           <div className="overflow-x-auto">
-            <div className="min-w-[860px]">
+            <div className="min-w-[720px] lg:min-w-[860px]">
               <div className="grid grid-cols-[1.8fr_1.6fr_1.4fr_0.8fr_0.8fr_0.6fr] gap-4 border-b border-black/[0.06] px-3 pb-2">
                 {['Student', 'Class & Roll', 'Plan', 'Progress', 'Status', ''].map((h) => (
                   <p key={h} className="text-[12px] font-medium text-[#94a3b8]">
@@ -1223,9 +1223,9 @@ export default function StudentManagement() {
 
         {/* Student Detail Modal */}
         {selectedStudent && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setSelectedStudent(null)}>
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4" onClick={() => setSelectedStudent(null)}>
             <div className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-hidden" onClick={e => e.stopPropagation()}>
-              <div className="flex items-center justify-between p-5 border-b border-gray-100">
+              <div className="flex items-center justify-between p-4 border-b border-gray-100 sm:p-5">
                 <div className="flex items-center gap-4">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold"
@@ -1243,7 +1243,7 @@ export default function StudentManagement() {
                 </button>
               </div>
 
-              <div className="flex border-b border-gray-100 px-5">
+              <div className="flex overflow-x-auto border-b border-gray-100 px-4 sm:px-5">
                 {['overview', 'progress', 'certificates', 'bills', 'notes'].map((tab) => (
                   <button
                     key={tab}
@@ -1259,10 +1259,10 @@ export default function StudentManagement() {
                 ))}
               </div>
 
-              <div className="p-5 overflow-y-auto max-h-[calc(90vh-140px)]">
+              <div className="overflow-y-auto p-4 max-h-[calc(90vh-140px)] sm:p-5">
                 {activeTab === 'overview' && (
                   <div className="space-y-6">
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-3">Personal Information</h3>
                         <div className="space-y-2 text-sm">
@@ -1299,7 +1299,7 @@ export default function StudentManagement() {
 
                     <div className="border-t border-gray-100 pt-4">
                       <h3 className="font-semibold text-gray-900 mb-3">Enrollment Details</h3>
-                      <div className="grid grid-cols-4 gap-4">
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         <div className="bg-gray-50 rounded-lg p-3">
                           <p className="text-xs text-gray-500">Enrollment Date</p>
                           <p className="text-sm font-medium mt-1">{new Date(selectedStudent.enrollment.enrollmentDate).toLocaleDateString()}</p>
@@ -1321,7 +1321,7 @@ export default function StudentManagement() {
 
                     <div className="border-t border-gray-100 pt-4">
                       <h3 className="font-semibold text-gray-900 mb-3">Subscription Plan</h3>
-                      <div className="grid grid-cols-4 gap-4">
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         <div className="bg-gray-50 rounded-lg p-3">
                           <p className="text-xs text-gray-500">Plan</p>
                           <p className="text-sm font-medium mt-1">{selectedStudent.subscription.plan}</p>
@@ -1345,7 +1345,7 @@ export default function StudentManagement() {
 
                 {activeTab === 'progress' && (
                   <div className="space-y-6">
-                    <div className="flex items-center gap-8">
+                    <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8">
                       <div className="text-center">
                         <div className="relative inline-flex">
                           <ProgressRing percentage={selectedStudent.progress.overall} size={80} strokeWidth={6} />
@@ -1355,7 +1355,7 @@ export default function StudentManagement() {
                         </div>
                         <p className="text-xs text-gray-500 mt-2">Overall Progress</p>
                       </div>
-                      <div className="grid grid-cols-3 gap-6 flex-1">
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6 flex-1 w-full">
                         <div className="text-center">
                           <p className="text-2xl font-bold text-gray-900">{selectedStudent.progress.attendance}%</p>
                           <p className="text-xs text-gray-500">Attendance</p>

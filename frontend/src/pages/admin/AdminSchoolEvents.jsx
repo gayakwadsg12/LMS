@@ -49,22 +49,22 @@ export default function InstructorSchoolEvents() {
 
   return (
     <div className="min-h-full bg-[#F7FAFD]">
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
         {/* Hero Section */}
         <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
-          <div className="flex items-start justify-between w-full">
+          <div className="flex w-full flex-col items-start justify-between gap-4 lg:flex-row">
             <div className="flex flex-col gap-[11px] items-start relative shrink-0">
               <div className="flex gap-2">
                 <span className="inline-flex h-[28px] items-center px-[10px] rounded-[12px] text-[12px] font-medium bg-[#e8f5ff] text-[#0f172a]">Academic year 2025</span>
                 <span className="inline-flex h-[28px] items-center px-[10px] rounded-[12px] text-[12px] font-medium bg-[#2dd4bf] text-[#023b33]">12 upcoming events</span>
               </div>
-              <div className="flex flex-col font-bold h-[31.59px] justify-center leading-[0] text-[#0f172a] text-[28px]">
+              <div className="text-[24px] font-bold leading-tight text-[#0f172a] sm:text-[28px]">
                 Annual school events and activities
               </div>
-              <div className="flex flex-col font-normal h-[17px] justify-center leading-[0] text-[#94a3b8] text-[14px]">
+              <div className="text-[14px] text-[#94a3b8]">
                 Plan assemblies, competitions, parent meetings, and celebration days across the term. Track status, coordinators, and participation from a single schedule view.
               </div>
-              <div className="flex gap-4 text-[13px] text-[#94a3b8]">
+              <div className="flex flex-wrap gap-3 text-[13px] text-[#94a3b8]">
                 <span className="inline-flex items-center gap-1">
                   <Users className="h-4 w-4 text-[#5b3df6]" />
                   1,240 expected participants this month
@@ -73,7 +73,7 @@ export default function InstructorSchoolEvents() {
                 <span>Auditorium, sports ground, and main hall booked</span>
               </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
               <button 
                 onClick={() => setShowCreateModal(true)}
                 className="inline-flex items-center gap-2 h-[40px] px-[16px] rounded-[6px] text-[14px] font-medium bg-[#5b3df6] text-white hover:bg-[#4c2dd9] transition-colors cursor-pointer"
@@ -90,11 +90,11 @@ export default function InstructorSchoolEvents() {
         </section>
 
         {/* Stats Grid */}
-        <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))]">
+        <div className="grid grid-cols-1 gap-x-[16px] gap-y-[16px] xl:grid-cols-[repeat(2,minmax(0,1fr))]">
           <div className="bg-white border border-black/[0.08] rounded-[8px] p-[21px]">
             <h3 className="text-[18px] font-bold text-[#0f172a] m-0">Events overview</h3>
             <p className="text-[13px] text-[#94a3b8] mt-[4px] mb-[16px]">Monitor planned activities, approvals, and venue coordination.</p>
-            <div className="grid grid-cols-3 gap-[16px]">
+            <div className="grid grid-cols-1 gap-[16px] sm:grid-cols-3">
               <div className="bg-[#f8fafc] rounded-[6px] p-[14px]">
                 <div className="text-[13px] font-medium text-[#94a3b8]">Scheduled events</div>
                 <div className="text-[30px] font-bold text-[#0f172a] mt-[6px]">18</div>
@@ -125,7 +125,7 @@ export default function InstructorSchoolEvents() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[1.7fr_1fr]">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-[1.7fr_1fr]">
           {/* Upcoming events */}
           <div className="bg-white border border-black/[0.08] rounded-[8px] flex flex-col">
             <div className="px-[21px] pt-[21px] pb-[16px] flex justify-between items-start gap-4">
@@ -140,7 +140,7 @@ export default function InstructorSchoolEvents() {
             <div className="flex flex-col gap-[12px] px-[21px] pb-[21px]">
               {events.map(([title, desc, date, time, venue, count, cta], i) => (
                 <div key={i} className="p-[16px] border border-black/[0.08] rounded-[6px]">
-                  <div className="flex items-start justify-between">
+                  <div className="flex flex-col items-start justify-between gap-3 sm:flex-row">
                     <div className="flex items-start gap-3 flex-1 min-w-0">
                       <div className="rounded-[6px] bg-[#f8fafc] px-3 py-2 text-center flex-shrink-0 min-w-[50px]">
                         <div className="text-[10px] font-medium text-[#94a3b8] uppercase">{date.split(' ')[0]}</div>
@@ -149,7 +149,7 @@ export default function InstructorSchoolEvents() {
                       <div className="min-w-0 flex-1">
                         <div className="text-[14px] font-semibold text-[#0f172a] leading-snug">{title}</div>
                         <div className="text-[12px] text-[#94a3b8] mt-[4px] line-clamp-2">{desc}</div>
-                        <div className="flex gap-3 mt-2 text-[11px] text-[#94a3b8]">
+                        <div className="mt-2 flex flex-wrap gap-3 text-[11px] text-[#94a3b8]">
                           <span className="inline-flex items-center gap-1">
                             <Clock className="h-3 w-3" />
                             {time}
@@ -165,7 +165,7 @@ export default function InstructorSchoolEvents() {
                         </div>
                       </div>
                     </div>
-                    <div className="ml-4 flex-shrink-0">
+                    <div className="flex-shrink-0 sm:ml-4">
                       <button className="inline-flex items-center h-[36px] px-[12px] rounded-[6px] text-[13px] font-medium bg-white text-[#0f172a] border border-black/[0.08] hover:bg-[#f1f5f9] transition-colors cursor-pointer whitespace-nowrap">
                         {cta}
                       </button>
@@ -229,8 +229,8 @@ export default function InstructorSchoolEvents() {
 
       {/* Create Event Modal */}
       {showCreateModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="w-[560px] max-h-[90vh] overflow-y-auto bg-white rounded-[8px] shadow-xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <div className="w-full max-w-[560px] max-h-[90vh] overflow-y-auto bg-white rounded-[8px] shadow-xl">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-5 border-b border-black/[0.08] sticky top-0 bg-white">
               <h2 className="text-[20px] font-bold text-[#0f172a]">Create new event</h2>
@@ -263,7 +263,7 @@ export default function InstructorSchoolEvents() {
               </div>
 
               {/* Category and Expected Attendees */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className="block text-[13px] font-semibold text-[#0f172a] mb-1.5">Category</label>
                   <div className="relative">
@@ -298,7 +298,7 @@ export default function InstructorSchoolEvents() {
                 <label className="block text-[13px] font-semibold text-[#0f172a] mb-1.5">
                   Date <span className="text-red-500">*</span>
                 </label>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                   <div className="col-span-1">
                     <input
                       type="date"
@@ -329,7 +329,7 @@ export default function InstructorSchoolEvents() {
               </div>
 
               {/* Venue and Coordinator */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className="block text-[13px] font-semibold text-[#0f172a] mb-1.5">Venue</label>
                   <div className="relative">
@@ -397,7 +397,7 @@ export default function InstructorSchoolEvents() {
             </div>
 
             {/* Modal Footer */}
-            <div className="flex gap-3 p-5 border-t border-black/[0.08] sticky bottom-0 bg-white">
+            <div className="sticky bottom-0 flex flex-col gap-3 border-t border-black/[0.08] bg-white p-5 sm:flex-row">
               <button
                 onClick={() => setShowCreateModal(false)}
                 className="flex-1 h-10 border border-black/[0.08] rounded-[6px] text-[13px] font-medium text-[#64748b] hover:bg-gray-50 transition-colors"

@@ -48,8 +48,8 @@ export default function SuperAdminSignup() {
 	}
 
 	return (
-		<div className="h-screen w-screen overflow-hidden flex items-center justify-center p-8 box-border bg-gradient-to-br from-[#1c113b] via-[#3a2286] to-[#5d3df0] font-[Inter,_'Segoe_UI',_Roboto,_sans-serif]">
-			<div className="h-full w-full max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_460px] items-center gap-13">
+		<div className="min-h-screen w-full overflow-x-hidden overflow-y-auto bg-gradient-to-br from-[#1c113b] via-[#3a2286] to-[#5d3df0] p-4 font-[Inter,_'Segoe_UI',_Roboto,_sans-serif] sm:p-6 lg:p-8">
+			<div className="mx-auto grid min-h-[calc(100vh-2rem)] w-full max-w-[1300px] grid-cols-1 items-start gap-8 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1fr_460px] lg:items-center lg:gap-13">
 				<section className="text-white">
 					<div className="inline-flex items-center gap-2 rounded-[12px] bg-white/15 px-3 py-1.5 text-[12px] font-semibold text-[#ffb76a]">
 						<Shield className="h-4 w-4" />
@@ -81,13 +81,13 @@ export default function SuperAdminSignup() {
 					</ul>
 				</section>
 
-				<section className="relative h-full max-lg:max-w-[520px] max-lg:mx-auto">
+				<section className="relative mx-auto w-full max-w-[520px] lg:h-full lg:max-w-none">
 					<img
 						src={DECORATIVE_IMG}
 						alt="Super admin"
-						className="absolute -top-9 -right-9 w-[110px] h-[110px] rounded-full border-6 border-white object-cover shadow-lg bg-white max-lg:hidden z-1"
+						className="absolute -top-9 -right-9 w-[110px] h-[110px] rounded-full border-6 border-white object-cover shadow-lg bg-white max-lg:hidden z-[1]"
 					/>
-					<div className="relative h-full max-h-[820px] bg-white rounded-2xl shadow-2xl p-10 max-sm:p-5 flex flex-col">
+					<div className="relative flex w-full flex-col rounded-2xl bg-white p-5 shadow-2xl sm:p-8 lg:h-full lg:max-h-[820px] lg:p-10">
 						<h2 className="m-0 text-[#0b1020] text-[30px] leading-[1.15] font-extrabold">Sign up as Super Admin</h2>
 						<p className="mt-2 text-[#6b7480] text-sm">Fill details to set up your super admin account.</p>
 

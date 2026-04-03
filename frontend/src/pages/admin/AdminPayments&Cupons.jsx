@@ -252,9 +252,9 @@ export default function AdminPaymentsCupons() {
 
   if (activeView === 'create') {
     return (
-      <div className="min-h-full bg-[#f6f8fa] p-5">
+      <div className="min-h-full bg-[#f6f8fa] p-4 sm:p-5">
         <div className="mx-auto max-w-[1180px] rounded-[10px] border border-black/[0.08] bg-white p-5">
-          <div className="mb-4 flex items-center justify-between">
+          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <button
               onClick={() => setActiveView('list')}
               className="inline-flex items-center gap-2 text-[13px] font-medium text-[#5b3df6]"
@@ -262,7 +262,7 @@ export default function AdminPaymentsCupons() {
               <ArrowLeft className="h-4 w-4" />
               Back to Payments & Coupons
             </button>
-            <div className="flex gap-2">
+            <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
               <button
                 onClick={() => setActiveView('list')}
                 className="h-9 rounded-[7px] border border-black/[0.08] bg-white px-3 text-[12px] font-semibold text-[#334155]"
@@ -274,12 +274,12 @@ export default function AdminPaymentsCupons() {
           </div>
 
           <p className="text-[12px] text-[#94a3b8]">Payments & Coupons / Create Coupon</p>
-          <h2 className="mt-1 text-[32px] font-bold text-[#0f172a]">Create Coupon</h2>
+          <h2 className="mt-1 text-[26px] font-bold text-[#0f172a] sm:text-[32px]">Create Coupon</h2>
 
-          <div className="mt-4 grid grid-cols-[1.5fr_1fr] gap-4">
+          <div className="mt-4 grid grid-cols-1 gap-4 xl:grid-cols-[1.5fr_1fr]">
             <section className="rounded-[8px] border border-black/[0.08] bg-white p-4">
               <h3 className="text-[18px] font-bold text-[#111827]">Coupon Details</h3>
-              <div className="mt-3 grid grid-cols-2 gap-3">
+              <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-[12px] font-medium text-[#334155]">Coupon code</label>
                   <input className="h-10 w-full rounded-[7px] border border-black/[0.08] px-3 text-[13px]" placeholder="e.g. NEWBATCH25" />
@@ -344,14 +344,14 @@ export default function AdminPaymentsCupons() {
 
   return (
     <div className="min-h-full bg-[#f6f8fa]">
-      <div className="space-y-4 p-5">
+      <div className="space-y-4 p-4 sm:p-5">
         <section className="rounded-[8px] border border-black/[0.08] bg-[#eaf2fb] p-6">
           <span className="inline-flex rounded-[12px] bg-[#ffd966] px-[10px] py-[5px] text-[11px] font-medium text-[#4b2e00]">Payment operations and coupon creation</span>
-          <h2 className="text-[28px] font-bold leading-tight text-[#0f172a] pt-2">
-            Track revenue, review transactions, and create high-performing <br/> coupons from one admin workspace.
+          <h2 className="pt-2 text-[24px] font-bold leading-tight text-[#0f172a] sm:text-[28px]">
+            Track revenue, review transactions, and create high-performing coupons from one admin workspace.
           </h2>
-          <p className="pt-2 text-[14px] text-[#94a3b8]">Monitor collections, failed payments, and redemptions while keeping a ready-to-publish coupon form visible for <br/> quick campaign launches.</p>
-          <div className="mt-4 flex gap-2">
+          <p className="pt-2 text-[14px] text-[#94a3b8]">Monitor collections, failed payments, and redemptions while keeping a ready-to-publish coupon form visible for quick campaign launches.</p>
+          <div className="mt-4 flex flex-wrap gap-2">
             <button
               onClick={() => setActiveView('create')}
               className="inline-flex h-9 items-center gap-1 rounded-[7px] bg-[#5b3df6] px-3 text-[12px] font-semibold text-white"
@@ -363,22 +363,22 @@ export default function AdminPaymentsCupons() {
           </div>
         </section>
 
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <StatCard label="Total collected" value="₹14.8L" badge="+12.4% vs last month" badgeClass="bg-[#2dd4bf] text-[#023b33]" />
           <StatCard label="Pending settlements" value="₹1.24L" badge="9 payouts in queue" badgeClass="bg-[#f0f4f8] text-[#64748b]" />
           <StatCard label="Coupon redemptions" value="482" badge="Creator campaign ready" badgeClass="bg-[#ffd966] text-[#4b2e00]" />
           <StatCard label="Failed payments" value="18" badge="Needs follow-up" badgeClass="bg-[#ffd966] text-[#4b2e00]" />
         </div>
 
-        <div className="grid grid-cols-[1.65fr_1fr] gap-3">
+        <div className="grid grid-cols-1 gap-3 xl:grid-cols-[1.65fr_1fr]">
           <div className="space-y-3">
             <section className="rounded-[8px] border border-black/[0.08] bg-white p-4">
-              <div className="mb-3 flex items-start justify-between">
+              <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <h3 className="text-[22px] font-bold text-[#111827]">Transactions</h3>
                   <p className="text-[12px] text-[#94a3b8]">Recent payments across courses, batches, and renewals.</p>
                 </div>
-                <div className="flex gap-1 text-[11px]">
+                <div className="flex flex-wrap gap-1 text-[11px]">
                   <button className="rounded-[7px] border border-black/[0.08] bg-[#f1f5f9] px-2 py-1">All payments</button>
                   <button className="rounded-[7px] border border-black/[0.08] bg-white px-2 py-1">Succeeded</button>
                   <button className="rounded-[7px] border border-black/[0.08] bg-white px-2 py-1">Failed</button>
@@ -387,7 +387,7 @@ export default function AdminPaymentsCupons() {
               </div>
               <div className="space-y-2">
                 {transactions.map((t) => (
-                  <div key={t.title} className="flex items-center justify-between rounded-[8px] border border-black/[0.06] p-3">
+                  <div key={t.title} className="flex flex-col gap-3 rounded-[8px] border border-black/[0.06] p-3 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex min-w-0 items-start gap-2">
                       <Receipt className="mt-0.5 h-4 w-4 shrink-0 text-[#5b3df6]" />
                       <div className="min-w-0">
@@ -406,7 +406,7 @@ export default function AdminPaymentsCupons() {
             </section>
 
             <section className="rounded-[8px] border border-black/[0.08] bg-white p-4">
-              <div className="mb-3 flex items-start justify-between">
+              <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <h3 className="text-[22px] font-bold text-[#111827]">Active coupons</h3>
                   <p className="text-[12px] text-[#94a3b8]">Performance, limits, and quick actions for live campaigns.</p>
@@ -415,12 +415,12 @@ export default function AdminPaymentsCupons() {
               </div>
               <div className="space-y-2">
                 {coupons.map((c) => (
-                  <div key={c.code} className="flex items-center justify-between rounded-[8px] border border-black/[0.06] p-3">
+                  <div key={c.code} className="flex flex-col gap-3 rounded-[8px] border border-black/[0.06] p-3 sm:flex-row sm:items-center sm:justify-between">
                     <div className="min-w-0">
                       <p className="text-[12px] font-semibold text-[#111827]">{c.code}</p>
                       <p className="truncate text-[10px] text-[#9aa9c0]">{c.desc}</p>
                     </div>
-                    <div className="ml-2 flex items-center gap-2">
+                    <div className="ml-0 flex flex-wrap items-center gap-2 sm:ml-2">
                       <span className={`inline-flex rounded-[12px] px-2 py-1 text-[10px] font-medium ${c.cls}`}>{c.status}</span>
                       <button className="rounded-[6px] border border-black/[0.08] bg-white px-2 py-1 text-[10px] font-semibold text-[#111827]">{c.action}</button>
                     </div>

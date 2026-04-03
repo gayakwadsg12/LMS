@@ -129,18 +129,18 @@ export default function StudentELibrary() {
 
   return (
     <div className="min-h-full bg-[#F7FAFD]">
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
         {/* Hero Section */}
-        <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
-          <div className="flex items-start justify-between w-full">
-            <div className="flex-1 pr-6">
+        <section className="w-full shrink-0 rounded-[8px] border border-black/[0.08] border-solid bg-gradient-to-br from-white to-[#e8f5ff] px-4 pb-5 pt-5 sm:px-6 sm:pb-6 sm:pt-6">
+          <div className="flex flex-col items-start justify-between gap-4 w-full lg:flex-row lg:items-start">
+            <div className="flex-1 min-w-0 lg:pr-6">
               <div className="bg-[#ffd966] inline-flex items-center px-[10px] py-[6.5px] rounded-[12px] mb-[16px]">
                 <BookOpen className="h-[14px] w-[14px] mr-[6px] text-[#4b2e00]" />
-                <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#4b2e00] text-[12px]">
+                <div className="text-[12px] font-medium text-[#4b2e00]">
                   Curated digital resources
                 </div>
               </div>
-              <h1 className="text-[28px] font-bold text-[#0f172a] mb-[12px]">Read, save, and revisit your learning resources in one library.</h1>
+              <h1 className="mb-[12px] text-[22px] font-bold text-[#0f172a] sm:text-[26px] lg:text-[28px]">Read, save, and revisit your learning resources in one library.</h1>
               <p className="text-[14px] text-[#94a3b8]">
                 Access ebooks, design playbooks, handbooks, and downloadable guides across UI/UX, product, frontend, and career growth. Everything is organized for quick reading and offline access.
               </p>
@@ -162,8 +162,8 @@ export default function StudentELibrary() {
                 </div>
               </div>
             </div>
-            <div className="shrink-0 ml-[24px]">
-              <div className="h-[160px] w-[240px] overflow-hidden rounded-[8px] border border-black/[0.08] shadow-md">
+            <div className="w-full shrink-0 lg:ml-[24px] lg:w-auto">
+              <div className="h-[180px] w-full overflow-hidden rounded-[8px] border border-black/[0.08] shadow-md sm:h-[200px] lg:h-[160px] lg:w-[240px]">
                 <img src={HERO_MOCKUP} alt="Library preview" className="h-full w-full object-cover" />
               </div>
             </div>
@@ -172,12 +172,12 @@ export default function StudentELibrary() {
 
         {/* Filter Bar */}
         <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px]">
-          <div className="flex items-center justify-between w-full">
+          <div className="flex flex-col items-start justify-between gap-3 w-full sm:flex-row sm:items-center">
             <div>
               <h2 className="font-bold text-[18px] text-[#0f172a]">Explore the library</h2>
               <p className="text-[13px] text-[#94a3b8] mt-[4px]">Browse by format, topic, reading time, or saved collection.</p>
             </div>
-            <button className="border border-black/[0.08] flex items-center gap-[8px] h-[40px] justify-center px-[17px] py-[0.25px] rounded-[6px] shrink-0 bg-white">
+            <button className="border border-black/[0.08] flex h-[40px] w-full items-center justify-center gap-[8px] px-[17px] py-[0.25px] rounded-[6px] bg-white sm:w-auto">
               <Bookmark className="h-[18px] w-[18px] text-[#5b3df6]" />
               <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">
                 Saved shelf
@@ -185,7 +185,7 @@ export default function StudentELibrary() {
             </button>
           </div>
           <div className="flex flex-wrap items-center gap-[12px] w-full">
-            <div className="flex-1 min-w-[240px] bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] px-[15px] py-[0.25px] relative rounded-[6px]">
+            <div className="flex-1 min-w-0 sm:min-w-[240px] bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] px-[15px] py-[0.25px] relative rounded-[6px]">
               <Search className="h-[18px] w-[18px] text-[#94a3b8]" />
               <input
                 className="min-w-0 flex-1 bg-transparent text-[14px] text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none"
@@ -208,7 +208,7 @@ export default function StudentELibrary() {
 
         {/* Recommended Reading */}
         <div className="flex flex-col gap-[16px]">
-          <div className="flex items-end justify-between">
+          <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-end">
             <div>
               <h2 className="font-bold text-[20px] text-[#0f172a]">Recommended reading</h2>
               <p className="text-[13px] text-[#94a3b8] mt-[4px]">Based on your recent activity in accessibility, systems thinking, and product fundamentals.</p>
@@ -216,7 +216,7 @@ export default function StudentELibrary() {
             <p className="text-[13px] font-medium text-[#5b3df6]">Showing 6 personalized picks</p>
           </div>
 
-          <div className="grid grid-cols-3 gap-[24px] h-[1000px] w-[1200px]">
+          <div className="grid grid-cols-1 gap-[24px] sm:grid-cols-2 xl:grid-cols-3">
             {books.map((book) => (
               <article key={book.title} className="bg-white border border-black/[0.08] border-solid rounded-[8px] overflow-hidden flex flex-col">
                 {/* Cover */}
@@ -239,7 +239,7 @@ export default function StudentELibrary() {
                   <p className="text-[13px] text-[#94a3b8] line-clamp-2">{book.desc}</p>
 
                   {/* Meta */}
-                  <div className="grid grid-cols-3 gap-[8px]">
+                  <div className="grid grid-cols-1 gap-[8px] sm:grid-cols-3">
                     {[['Pages', book.pages], ['Format', book.format], ['Reading time', book.readingTime]].map(([label, val]) => (
                       <div key={label} className="bg-[#f8fafc] rounded-[6px] p-[8px]">
                         <p className="text-[10px] text-[#94a3b8]">{label}</p>
@@ -263,7 +263,7 @@ export default function StudentELibrary() {
                   </div>
 
                   {/* Size + download */}
-                  <div className="flex items-center justify-between pt-[8px] border-t border-black/[0.08]">
+                  <div className="flex flex-col gap-3 border-t border-black/[0.08] pt-[8px] sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="text-[20px] font-bold text-[#0f172a]">{book.size}</p>
                       <p className="text-[11px] text-[#94a3b8]">{book.note}</p>

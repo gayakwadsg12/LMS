@@ -15,13 +15,13 @@ export default function AdminAnalytics() {
   const bars = [50, 61, 71, 75, 74, 73, 72]
   return (
     <div className="min-h-full bg-[#f6f8fa]">
-      <div className="space-y-4 p-5">
-        <section className="grid grid-cols-[1.7fr_1fr] gap-3 rounded-[8px] border border-black/[0.08] bg-[#eaf2fb] p-4">
+      <div className="space-y-4 p-4 sm:p-5">
+        <section className="grid grid-cols-1 gap-3 rounded-[8px] border border-black/[0.08] bg-[#eaf2fb] p-4 lg:grid-cols-[1.7fr_1fr]">
           <div>
             <span className="inline-flex rounded-[12px] bg-[#ffd966] px-[10px] py-[5px] text-[11px] font-medium text-[#4b2e00]">Analytics overview</span>
             <h2 className="mt-3 max-w-[760px] text-[28px] font-bold leading-tight text-[#0f172a]">Track course performance, learner engagement, and revenue momentum from one analytics workspace.</h2>
             <p className="mt-2 max-w-[760px] text-[14px] text-[#94a3b8]">Review weekly trends, spot drop-offs early, and compare top-performing programs without leaving the institute dashboard.</p>
-            <div className="mt-4 flex gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               <button className="inline-flex h-9 items-center gap-1 rounded-[7px] bg-[#5b3df6] px-3 text-[12px] font-semibold text-white"><Filter className="h-4 w-4" />Apply Filters</button>
               <button className="inline-flex h-9 items-center gap-1 rounded-[7px] border border-black/[0.08] bg-white px-3 text-[12px] font-semibold text-[#111827]"><CalendarDays className="h-4 w-4" />Last 30 days</button>
             </div>
@@ -39,21 +39,21 @@ export default function AdminAnalytics() {
           </div>
         </section>
 
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <Stat label="Weekly active learners" value="6,248" chip="+4.1% vs last week" chipCls="bg-[#2dd4bf] text-[#023b33]" />
           <Stat label="Average completion rate" value="78%" chip="+5 points" chipCls="bg-[#2dd4bf] text-[#023b33]" />
           <Stat label="Avg. watch time" value="42 min" chip="Steady this week" chipCls="bg-[#f0f4f8] text-[#64748b]" />
           <Stat label="Revenue from enrollments" value="₹2.4L" chip="+2 funding flagged" chipCls="bg-[#ffd966] text-[#4b2e00]" />
         </div>
 
-        <div className="grid grid-cols-[1.6fr_1fr] gap-3">
+        <div className="grid grid-cols-1 gap-3 xl:grid-cols-[1.6fr_1fr]">
           <section className="rounded-[8px] border border-black/[0.08] bg-white p-4">
-            <div className="mb-3 flex items-center justify-between">
+            <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="text-[22px] font-bold text-[#111827]">Performance trend</h3>
                 <p className="text-[12px] text-[#94a3b8]">Enrollment and engagement trend across the last 7 days.</p>
               </div>
-              <div className="flex gap-1 text-[11px]">
+              <div className="flex flex-wrap gap-1 text-[11px]">
                 <button className="rounded-[7px] border border-black/[0.08] bg-[#ede7ff] px-2 py-1">Weekly</button>
                 <button className="rounded-[7px] border border-black/[0.08] bg-white px-2 py-1">Monthly</button>
                 <button className="rounded-[7px] border border-black/[0.08] bg-white px-2 py-1">By course</button>
@@ -62,12 +62,12 @@ export default function AdminAnalytics() {
             <div className="flex h-[190px] items-end justify-between rounded-[8px] bg-[#f8fafc] px-4 pb-4">
               {bars.map((v, i) => (
                 <div key={i} className="flex flex-col items-center gap-1">
-                  <div className="w-10 rounded-t-[4px] bg-gradient-to-b from-[#f7b267] to-[#5b3df6]" style={{ height: `${v * 1.2}px` }} />
+                  <div className="w-7 rounded-t-[4px] bg-gradient-to-b from-[#f7b267] to-[#5b3df6] sm:w-10" style={{ height: `${v * 1.2}px` }} />
                   <span className="text-[9px] text-[#94a3b8]">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i]}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-3 grid grid-cols-3 gap-2">
+            <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
               <div className="rounded-[8px] bg-[#f1f5f9] p-2"><p className="text-[10px] text-[#94a3b8]">Peak day</p><p className="text-[16px] font-bold text-[#111827]">Saturday</p></div>
               <div className="rounded-[8px] bg-[#f1f5f9] p-2"><p className="text-[10px] text-[#94a3b8]">Best conversion</p><p className="text-[16px] font-bold text-[#111827]">14.8%</p></div>
               <div className="rounded-[8px] bg-[#f1f5f9] p-2"><p className="text-[10px] text-[#94a3b8]">Active learners</p><p className="text-[16px] font-bold text-[#111827]">186</p></div>
@@ -111,17 +111,17 @@ export default function AdminAnalytics() {
           </div>
         </div>
 
-        <div className="grid grid-cols-[1.6fr_1fr] gap-3">
+        <div className="grid grid-cols-1 gap-3 xl:grid-cols-[1.6fr_1fr]">
           <section className="rounded-[8px] border border-black/[0.08] bg-white p-4">
-            <div className="mb-3 flex items-start justify-between">
+            <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <h3 className="text-[22px] font-bold text-[#111827]">Course performance table</h3>
                 <p className="text-[12px] text-[#94a3b8]">Compare engagement, completion, and revenue by course.</p>
               </div>
               <button className="h-8 rounded-[7px] border border-black/[0.08] bg-[#f1f5f9] px-3 text-[11px] font-medium">View all courses</button>
             </div>
-            <div className="overflow-hidden rounded-[8px] border border-black/[0.08]">
-              <table className="w-full text-left text-[11px]">
+            <div className="overflow-x-auto rounded-[8px] border border-black/[0.08]">
+              <table className="w-full min-w-[640px] text-left text-[11px]">
                 <thead className="bg-[#f8fafc] text-[#94a3b8]">
                   <tr>
                     <th className="px-3 py-2">Course</th>

@@ -139,7 +139,7 @@ export default function StudentLiveClasses() {
       {/* Confirmation Modal */}
       {showConfirmModal && selectedSession && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="w-[480px] bg-white rounded-[16px] shadow-xl overflow-hidden">
+          <div className="w-[calc(100%-1.5rem)] overflow-hidden rounded-[16px] bg-white shadow-xl sm:w-[480px]">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-5 border-b border-black/[0.08]">
               <h2 className="text-[20px] font-bold text-[#0f172a]">Confirm reservation</h2>
@@ -160,7 +160,7 @@ export default function StudentLiveClasses() {
               {/* Session Details */}
               <div className="bg-[#f8fafc] rounded-[12px] p-4 mb-5 border border-black/[0.08]">
                 <h3 className="text-[16px] font-bold text-[#0f172a] mb-3">{selectedSession.title}</h3>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="flex items-center gap-2 text-[13px] text-[#64748b]">
                     <Calendar className="h-4 w-4 text-[#5b3df6]" />
                     <span>{selectedSession.time}</span>
@@ -203,7 +203,7 @@ export default function StudentLiveClasses() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-3 pt-3 border-t border-black/[0.08]">
+              <div className="flex flex-col gap-3 pt-3 border-t border-black/[0.08] sm:flex-row">
                 <button
                   onClick={handleCancelReservation}
                   className="flex-1 h-10 border border-black/[0.08] rounded-[8px] text-[13px] font-medium text-[#64748b] hover:bg-gray-50 transition-colors"
@@ -222,11 +222,11 @@ export default function StudentLiveClasses() {
         </div>
       )}
 
-      <div className="bg-gradient-to-b flex flex-col from-[#f6f8fa] gap-[24px] h-full p-[28px] to-[#f7fcff]">
+      <div className="bg-gradient-to-b flex h-full flex-col gap-[24px] from-[#f6f8fa] p-4 to-[#f7fcff] sm:p-6 lg:p-7">
         {/* Hero Banner */}
-        <section className="border border-black/[0.08] border-solid content-stretch flex flex-col items-start pb-[23px] pt-[25px] px-[25px] relative rounded-[8px] shrink-0 w-full bg-gradient-to-br from-white to-[#e8f5ff]">
-          <div className="flex items-start justify-between w-full">
-            <div className="flex-1 pr-6">
+        <section className="w-full shrink-0 rounded-[8px] border border-black/[0.08] border-solid bg-gradient-to-br from-white to-[#e8f5ff] px-4 pb-5 pt-5 sm:px-6 sm:pb-6 sm:pt-6">
+          <div className="flex flex-col items-start justify-between gap-4 w-full lg:flex-row lg:items-start">
+            <div className="flex-1 min-w-0 lg:pr-6">
               <div className="bg-[#ffd966] inline-flex items-center px-[10px] py-[6.5px] rounded-[12px] mb-[16px]">
                 <Video className="h-[14px] w-[14px] mr-[6px] text-[#4b2e00]" />
                 <div className="flex flex-col font-medium h-[15px] justify-center leading-[0] text-[#4b2e00] text-[12px]">
@@ -246,7 +246,7 @@ export default function StudentLiveClasses() {
               </div>
             </div>
             {/* Live now card */}
-            <div className="w-[280px] shrink-0 bg-white border border-black/[0.08] rounded-[8px] p-[20px]">
+            <div className="w-full shrink-0 rounded-[8px] border border-black/[0.08] bg-white p-[20px] lg:w-[280px]">
               <div className="flex items-center gap-[8px] mb-[12px]">
                 <span className="h-[8px] w-[8px] rounded-full bg-[#ffd966] animate-pulse" />
                 <span className="text-[12px] font-semibold text-[#ffd966]">Live now in 18 min</span>
@@ -268,18 +268,18 @@ export default function StudentLiveClasses() {
 
         {/* Browse filters */}
         <div className="bg-white border border-black/[0.08] border-solid flex flex-col gap-[16px] items-start p-[21px] rounded-[8px]">
-          <div className="flex items-center justify-between w-full">
+          <div className="flex flex-col items-start justify-between gap-3 w-full sm:flex-row sm:items-center">
             <div>
               <h2 className="font-bold text-[18px] text-[#0f172a]">Browse live schedule</h2>
               <p className="text-[13px] text-[#94a3b8] mt-[4px]">Filter by track, type, mentor, or seat availability.</p>
             </div>
-            <button className="border border-black/[0.08] flex items-center gap-[8px] h-[40px] justify-center px-[17px] py-[0.25px] rounded-[6px] shrink-0 bg-white">
+            <button className="border border-black/[0.08] flex h-[40px] w-full items-center justify-center gap-[8px] px-[17px] py-[0.25px] rounded-[6px] bg-white sm:w-auto">
               <Calendar className="h-[18px] w-[18px] text-[#0f172a]" />
               <div className="flex flex-col font-medium h-[17px] justify-center leading-[0] text-[#0f172a] text-[14px]">Weekly view</div>
             </button>
           </div>
           <div className="flex flex-wrap items-center gap-[12px] w-full">
-            <div className="flex-1 min-w-[240px] bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] px-[15px] py-[0.25px] relative rounded-[6px]">
+            <div className="flex-1 min-w-0 sm:min-w-[240px] bg-white border border-black/[0.08] flex items-center gap-[10px] h-[40px] px-[15px] py-[0.25px] relative rounded-[6px]">
               <Search className="h-[18px] w-[18px] text-[#94a3b8]" />
               <input
                 className="min-w-0 flex-1 bg-transparent text-[14px] text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none"
@@ -303,10 +303,10 @@ export default function StudentLiveClasses() {
         </div>
 
         {/* Main content */}
-        <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[1fr_300px]">
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-[24px] xl:grid-cols-[1fr_300px]">
           {/* Sessions list */}
           <div className="flex flex-col gap-[16px]">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
               <div>
                 <h2 className="font-bold text-[20px] text-[#0f172a]">Upcoming sessions</h2>
                 <p className="text-[13px] text-[#94a3b8] mt-[4px]">Built around your current courses and recent activity.</p>
@@ -316,7 +316,7 @@ export default function StudentLiveClasses() {
 
             {sessions.map((s) => (
               <article key={s.id} className="bg-white border border-black/[0.08] border-solid rounded-[8px] p-[20px]">
-                <div className="flex items-start justify-between gap-[12px] mb-[12px]">
+                <div className="mb-[12px] flex flex-col items-start justify-between gap-[12px] sm:flex-row sm:items-start">
                   <div className="flex flex-wrap gap-[8px]">
                     {s.tags.map((tag, i) => (
                       <span key={tag} className={`inline-flex h-[26px] items-center px-[10px] rounded-[10px] text-[11px] font-medium ${tag === 'Live today' ? 'bg-[#ffd966] text-[#4b2e00]' : 'bg-[#f1f5f9] text-[#0f172a]'}`}>
@@ -330,7 +330,7 @@ export default function StudentLiveClasses() {
                 <h3 className="font-bold text-[18px] text-[#0f172a] leading-snug">{s.title}</h3>
                 <p className="mt-[8px] text-[13px] text-[#94a3b8]">{s.desc}</p>
 
-                <div className="mt-[16px] grid grid-cols-4 gap-[12px]">
+                <div className="mt-[16px] grid grid-cols-2 gap-[12px] md:grid-cols-4">
                   {[['Time', s.time], ['Duration', s.duration], ['Format', s.format], ['Capacity', s.capacity]].map(([label, val]) => (
                     <div key={label} className="bg-[#f8fafc] rounded-[6px] px-[12px] py-[8px]">
                       <div className="text-[10px] text-[#94a3b8] mb-[4px]">{label}</div>
@@ -339,7 +339,7 @@ export default function StudentLiveClasses() {
                   ))}
                 </div>
 
-                <div className="mt-[16px] flex items-center justify-between">
+                <div className="mt-[16px] flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div className="flex items-center gap-[12px]">
                     <div className="h-[36px] w-[36px] rounded-[6px] flex items-center justify-center text-[14px] font-bold bg-[#e8f5ff] text-[#5b3df6]">
                       {s.mentor[0]}
@@ -349,7 +349,7 @@ export default function StudentLiveClasses() {
                       <div className="text-[11px] text-[#94a3b8]">{s.mentorRole}</div>
                     </div>
                   </div>
-                  <div className="flex gap-[12px]">
+                  <div className="flex w-full flex-wrap gap-[12px] sm:w-auto">
                     {s.actions.map(a => (
                       <button
                         key={a.label}
@@ -358,7 +358,7 @@ export default function StudentLiveClasses() {
                             handleReserveClick(s)
                           }
                         }}
-                        className={`h-[36px] px-[14px] rounded-[6px] text-[12px] font-medium ${
+                        className={`h-[36px] w-full px-[14px] rounded-[6px] text-[12px] font-medium sm:w-auto ${
                           a.variant === 'primary' 
                             ? 'bg-[#5b3df6] text-white hover:bg-[#4a2ed8]' 
                             : 'border border-black/[0.08] bg-white text-[#0f172a] hover:bg-gray-50'

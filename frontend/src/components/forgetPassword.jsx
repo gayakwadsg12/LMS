@@ -1,120 +1,75 @@
-import React, { useState } from "react";
-export default (props) => {
-    const [input1, onChangeInput1] = useState('');
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+export default function ForgetPassword() {
+    const [email, setEmail] = useState('')
+
     return (
-        <div className="flex flex-col bg-white">
-            <div className="self-stretch py-28 px-[120px]"
-                style={{
-                    background: "linear-gradient(180deg, #1C113B, #3A2286, #5D3DF0)"
-                }}>
-                <div className="flex justify-between items-center self-stretch max-w-[1200px]">
-                    <div className="flex flex-col shrink-0 items-start">
-                        <div className="flex flex-col items-start pb-[1px] pr-[76px] mb-[23px]">
-                            <span className="text-white text-[64px] font-bold w-[484px]" >
-                                {"Build, Sell &\nScale Your\nOnline Courses"}
-                            </span>
-                        </div>
-                        <div className="flex flex-col items-start py-[5px] pr-3 mb-6 mr-20">
-                            <span className="text-white text-lg w-[467px]" >
-                                {"Multi-tenant LMS SaaS platform designed for institutes,\neducators, and learners. Launch your own learning\nplatform in minutes."}
-                            </span>
-                        </div>
-                        <div className="flex flex-col items-start pt-6">
-                            <div className="flex items-center mb-[19px]">
-                                <img
-                                    src={"https://storage.googleapis.com/tagjs-prod.appspot.com/v1/BywfetPpbr/i3b6odit_expires_30_days.png"}
-                                    className="w-8 h-8 mr-4 object-fill"
+        <div className="min-h-screen w-full overflow-x-hidden overflow-y-auto bg-gradient-to-br from-[#1c113b] via-[#3a2286] to-[#5d3df0] p-4 font-[Inter,_'Segoe_UI',_Roboto,_sans-serif] sm:p-6 lg:p-8">
+            <div className="mx-auto grid min-h-[calc(100vh-2rem)] w-full max-w-[1300px] grid-cols-1 items-start gap-8 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1fr_460px] lg:items-center lg:gap-13">
+                <section className="text-white">
+                    <h1 className="m-0 text-[64px] leading-[1.15] font-extrabold tracking-[-1.2px] whitespace-pre-line max-lg:text-[44px] max-sm:text-[34px]">
+                        Reset Access to{`\n`}Your Learning{`\n`}
+                        <span className="text-[#ff8a33]">Account Securely</span>
+                    </h1>
+                    <p className="mt-5.5 max-w-[490px] text-lg leading-relaxed text-white/70">
+                        Enter your registered email and we will send a secure reset link so you can get back to your LMS dashboard quickly.
+                    </p>
+                    <ul className="mt-8 p-0 list-none flex flex-col gap-4">
+                        <li className="flex items-center gap-3 text-base">
+                            <span className="w-8 h-8 rounded-full inline-flex items-center justify-center bg-white/15 text-[#ff8a33] font-bold">✓</span>
+                            Fast reset link delivery
+                        </li>
+                        <li className="flex items-center gap-3 text-base">
+                            <span className="w-8 h-8 rounded-full inline-flex items-center justify-center bg-white/15 text-[#ff8a33] font-bold">✓</span>
+                            Secure and verified workflow
+                        </li>
+                        <li className="flex items-center gap-3 text-base">
+                            <span className="w-8 h-8 rounded-full inline-flex items-center justify-center bg-white/15 text-[#ff8a33] font-bold">✓</span>
+                            Works across all roles
+                        </li>
+                    </ul>
+                </section>
+
+                <section className="relative mx-auto w-full max-w-[520px] lg:h-full lg:max-w-none">
+                    <div className="relative flex w-full flex-col rounded-2xl bg-white p-5 shadow-2xl sm:p-8 lg:h-full lg:max-h-[820px] lg:p-10">
+                        <Link to="/login" className="mb-6 text-sm font-semibold text-[#5d3df0] no-underline">
+                            Back to login
+                        </Link>
+
+                        <h2 className="m-0 text-[#0b1020] text-[30px] leading-[1.15] font-extrabold">Forgot password?</h2>
+                        <p className="mt-2 text-[#6b7480] text-sm">
+                            Enter the email associated with your account and we will send you a reset link.
+                        </p>
+
+                        <form className="mt-6 flex flex-col gap-4" onSubmit={(event) => event.preventDefault()}>
+                            <label className="flex flex-col gap-2">
+                                <span className="text-[#0b1020] text-sm font-semibold">Email Address</span>
+                                <input
+                                    placeholder="you@example.com"
+                                    value={email}
+                                    onChange={(event) => setEmail(event.target.value)}
+                                    className="border border-black/10 rounded-md p-3.5 text-sm text-[#0b1020] outline-none focus:border-[#5a3bd6] focus:ring-3 focus:ring-[#5a3bd6]/20"
                                 />
-                                <div className="flex flex-col shrink-0 items-start py-0.5 px-[1px] mr-[316px]">
-                                    <span className="text-white text-base" >
-                                        {"Multi-Tenant LMS System"}
-                                    </span>
-                                </div>
+                            </label>
+
+                            <div className="rounded-xl bg-gray-100 p-4 text-[13px] text-[#6b7280]">
+                                Reset instructions typically arrive within a few minutes. Check spam if you do not see the email.
                             </div>
-                            <div className="flex items-center mb-[19px]">
-                                <img
-                                    src={"https://storage.googleapis.com/tagjs-prod.appspot.com/v1/BywfetPpbr/zn3ubi05_expires_30_days.png"}
-                                    className="w-8 h-8 mr-4 object-fill"
-                                />
-                                <div className="flex flex-col shrink-0 items-start py-0.5 px-[1px] mr-[317px]">
-                                    <span className="text-white text-base" >
-                                        {"Live & Recorded Learning"}
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="flex items-center mb-[1px]">
-                                <img
-                                    src={"https://storage.googleapis.com/tagjs-prod.appspot.com/v1/BywfetPpbr/1a9inalk_expires_30_days.png"}
-                                    className="w-8 h-[31px] mr-4 object-fill"
-                                />
-                                <div className="flex flex-col shrink-0 items-start py-0.5 mr-[292px]">
-                                    <span className="text-white text-base" >
-                                        {"Secure Payments Integration"}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+
+                            <button type="submit" className="border-0 rounded-md bg-[#ff8a33] text-white text-base font-bold p-3.5 cursor-pointer mt-1">
+                                Send reset link
+                            </button>
+
+                            <p className="text-center text-[13px] text-[#6b7480]">
+                                Remembered your password?{' '}
+                                <Link to="/login" className="font-semibold text-[#5d3df0] no-underline">
+                                    Back to login
+                                </Link>
+                            </p>
+                        </form>
                     </div>
-                    <div className="flex flex-col shrink-0 items-start bg-[#FFFFFF00] py-[85px] rounded-3xl"
-                        style={{
-                            boxShadow: "0px 25px 50px #0000004D"
-                        }}>
-                        <div className="flex items-center mb-9 ml-10 gap-[11px]">
-                            <img
-                                src={"https://storage.googleapis.com/tagjs-prod.appspot.com/v1/BywfetPpbr/lzvakqul_expires_30_days.png"}
-                                className="w-9 h-9 object-fill"
-                            />
-                            <span className="text-[#8B8696] text-sm font-bold" >
-                                {"Back to login"}
-                            </span>
-                        </div>
-                        <div className="flex flex-col items-start pb-[1px] pr-[129px] mb-2.5 mx-10">
-                            <span className="text-[#0B0B0B] text-3xl font-bold" >
-                                {"Forgot password?"}
-                            </span>
-                        </div>
-                        <div className="flex flex-col items-start pt-1 pb-[5px] pr-[19px] mb-[31px] ml-10">
-                            <span className="text-[#8B8696] text-sm w-[319px]" >
-                                {"Enter the email address associated with your\naccount and we’ll send you a secure link to reset\nyour password."}
-                            </span>
-                        </div>
-                        <div className="flex flex-col items-start mb-6 ml-10 gap-2">
-                            <div className="flex flex-col items-start pb-[1px] pr-[293px]">
-                                <span className="text-[#0B0B0B] text-[13px] font-bold" >
-                                    {"Email Address"}
-                                </span>
-                            </div>
-                            <input
-                                placeholder={"you@example.com"}
-                                value={input1}
-                                onChange={(event) => onChangeInput1(event.target.value)}
-                                className="text-[#8B8696] bg-white text-sm py-[19px] px-[17px] rounded-[10px] border border-solid border-[#00000012]"
-                            />
-                        </div>
-                        <div className="flex items-start bg-gray-100 py-[18px] mb-7 ml-10 rounded-xl">
-                            <img
-                                src={"https://storage.googleapis.com/tagjs-prod.appspot.com/v1/BywfetPpbr/galyddi5_expires_30_days.png"}
-                                className="w-[18px] h-[19px] ml-4 mr-3 rounded-xl object-fill"
-                            />
-                            <div className="flex flex-col shrink-0 items-start pb-[1px] mr-[31px]">
-                                <span className="text-[#8B8696] text-[13px] w-[301px]" >
-                                    {"Reset instructions typically arrive within a few\nminutes. Be sure to check your spam folder if you\ndon’t see the email."}
-                                </span>
-                            </div>
-                        </div>
-                        <button className="flex flex-col items-start bg-[#FF8A2B] text-left py-[19px] px-[137px] mb-[23px] ml-10 rounded-[10px] border-0"
-                            onClick={() => alert("Pressed!")}>
-                            <span className="text-white text-[15px] font-bold" >
-                                {"Send reset link"}
-                            </span>
-                        </button>
-                        <div className="flex flex-col items-start pb-[1px] ml-[87px]">
-                            <span className="text-[#8B8696] text-sm" >
-                                {"Remembered your password? Back to login"}
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
     )

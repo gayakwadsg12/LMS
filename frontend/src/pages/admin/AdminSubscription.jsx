@@ -55,7 +55,7 @@ export default function AdminSubscription() {
 			</section>
 
 			<section className="mt-6 rounded-[8px] border border-black/[0.08] bg-white p-5 sm:p-6">
-				<div className="flex items-center justify-between">
+				<div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
 					<h3 className="text-[18px] font-bold text-[#0f172a]">Subscription plans</h3>
 					<span className="rounded-[12px] bg-[#eef2ff] px-3 py-1 text-[12px] font-medium text-[#4338ca]">Admin only controls</span>
 				</div>
@@ -148,7 +148,7 @@ export default function AdminSubscription() {
 					/>
 					<button
 						onClick={addPlan}
-						className="inline-flex h-10 items-center justify-center gap-2 rounded-[6px] bg-[#5b3df6] px-4 text-[13px] font-medium text-white hover:bg-[#4c2dd9]"
+						className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-[6px] bg-[#5b3df6] px-4 text-[13px] font-medium text-white hover:bg-[#4c2dd9] sm:w-auto"
 					>
 						<PlusCircle className="h-4 w-4" />
 						Add plan
